@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 38 48% 95%;
+  --foreground: 20 30% 16%;
+  --card: 36 43% 93%;
+  --primary: 350 56% 26%;
+  --primary-foreground: 38 48% 95%;
+  --accent: 40 88% 54%;
+  --accent-foreground: 20 30% 16%;
+  --muted-foreground: 22 14% 38%;
+  --border: 26 28% 81%;
+  --copper: 18 51% 45%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-cream: hsl(var(--background));
+  --color-copper: hsl(var(--copper));
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-logo: var(--font-logo);
+  --shadow-luxury: 0 24px 60px -30px hsl(var(--primary) / 0.28);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.shadow-luxury {
+  box-shadow: 0 24px 60px -30px hsl(var(--primary) / 0.28);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.font-heading {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
 }
