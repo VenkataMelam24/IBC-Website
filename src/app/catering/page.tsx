@@ -47,12 +47,12 @@ export default function CateringPage() {
 
         {/* Content */}
         <div className="relative flex min-h-[55vh] w-full items-center px-6 py-14 lg:px-10">
-          <div className="max-w-lg">
+          <div className="max-w-xl">
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/60">
               IBC Catering
             </p>
             <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.3] text-foreground sm:text-5xl lg:text-[3.25rem]">
-              Catering<br />Service.
+              Catering Service.
             </h1>
             <div className="mt-4 h-1 w-16 bg-primary" />
             <p className="mt-6 max-w-[44ch] text-base leading-relaxed text-foreground/70 md:text-lg">

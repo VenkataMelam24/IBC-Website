@@ -19,7 +19,7 @@ export const branches: Branch[] = [
     displayTitle: "IBC Charlottenburg",
     city: "Berlin",
     address: "Hektorstraße 11, 10711 Berlin, Germany",
-    phone: "+49 179 9676142",
+    phone: "+49 177 3771839",
     openingHours: "Tue–Thu 16:00–22:00 · Fri–Sun 12:00–22:00",
     imageUrl: "/images/hero-biryani.png",
     mapUrl:

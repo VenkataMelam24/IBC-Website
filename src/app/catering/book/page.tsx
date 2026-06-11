@@ -20,7 +20,7 @@ const cateringMenu = [
     category: "Appetizers",
     servingNote: "Each full tray serves 10–12 people",
     items: [
-      { name: "Chilli Chicken", price: 99,  priceLabel: "€99",  image: "/images/catering-chili-chicken.png" },
+      { name: "Chilli Chicken", price: 119, priceLabel: "€119", image: "/images/catering-chili-chicken.png" },
       { name: "Chilli Paneer",  price: 99,  priceLabel: "€99",  image: "/images/catering-chilli-paneer.png" },
       { name: "Chilli Gobi",    price: 99,  priceLabel: "€99",  image: "/images/catering-chili-gobi.png" },
       { name: "Chilli Shrimp",  price: 129, priceLabel: "€129", image: "/images/catering-chilli-shrimp.png" },
@@ -134,7 +134,7 @@ export default function CateringBookPage() {
         setSubmitError("Something went wrong. Please try again or call us directly.");
       }
     } catch {
-      setSubmitError("Could not send your enquiry. Please call us at +49 179 967 6142.");
+      setSubmitError("Could not send your enquiry. Please call us at +49 177 3771839.");
     } finally {
       setSubmitting(false);
     }

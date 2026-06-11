@@ -63,7 +63,7 @@ export async function POST(request: Request) {
           <div style="margin-top:32px;padding:20px;background:#fff;border-radius:8px;border:1px solid #e8ddd3;font-size:13px;color:#888;line-height:1.6">
             <strong style="color:#6b1e2e">Indian Biryani Company</strong><br>
             Berlin, Germany<br>
-            📞 +49 179 967 6142<br>
+            📞 +49 177 3771839 (WhatsApp) · 030 2083 3623<br>
             📧 theindianbiryanicompany@gmail.com
           </div>
         </div>

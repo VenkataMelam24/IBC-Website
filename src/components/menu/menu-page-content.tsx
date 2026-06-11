@@ -128,7 +128,7 @@ export function MenuPageContent() {
             </p>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { name: "Chilli Chicken", price: "€99",  description: "Crispy chicken tossed in a bold, spicy Indo-Chinese sauce with peppers and onions.", image: "/images/catering-chili-chicken.png" },
+                { name: "Chilli Chicken", price: "€119", description: "Crispy chicken tossed in a bold, spicy Indo-Chinese sauce with peppers and onions.", image: "/images/catering-chili-chicken.png" },
                 { name: "Chilli Paneer",  price: "€99",  description: "Golden paneer cubes stir-fried with capsicum and onions in a tangy chilli sauce.", image: "/images/catering-chilli-paneer.png" },
                 { name: "Chilli Gobi",    price: "€99",  description: "Crispy cauliflower florets tossed in a fiery Indo-Chinese sauce with fresh vegetables.", image: "/images/catering-chili-gobi.png" },
                 { name: "Chilli Shrimp",  price: "€129", description: "Juicy shrimp sautéed in a spicy, tangy chilli sauce with peppers and spring onions.", image: "/images/catering-chilli-shrimp.png" },

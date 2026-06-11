@@ -19,9 +19,9 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:h-20 lg:px-10">
-        <Link href="/" className="flex flex-col items-center gap-0">
-          <span className="font-logo text-[1.85rem] font-bold leading-none tracking-wide text-primary md:text-[2rem]">IBC</span>
-          <span className="text-[6.5px] font-bold uppercase tracking-[0.26em] text-primary/60 md:text-[7px]">Indian Biryani Company</span>
+        <Link href="/" aria-label="Indian Biryani Company">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/logo.png" alt="IBC — Indian Biryani Company" className="h-9 w-auto md:h-10" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
