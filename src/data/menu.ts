@@ -3,6 +3,7 @@ export type MenuItem = {
   price: string;
   description: string;
   image?: string;
+  tags?: string[];
 };
 
 export type MenuCategory = {
@@ -24,6 +25,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Aromatic basmati rice cooked with seasonal vegetables, herbs, and Indian spices for a flavourful vegetarian biryani.",
         image: `${FOOD_PREFIX}veg_biryani.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Chicken Biryani",
@@ -31,6 +33,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Aromatic basmati rice prepared with tender chicken, fragrant spices, and fresh herbs.",
         image: `${FOOD_PREFIX}chicken_biryani.jpg`,
+        tags: ["Non-Veg", "Bestseller"],
       },
       {
         name: "Mutton Biryani",
@@ -38,6 +41,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Aromatic basmati rice prepared with tender mutton, fragrant spices, and fresh herbs.",
         image: `${FOOD_PREFIX}mutton_biryani.jpg`,
+        tags: ["Non-Veg"],
       },
     ],
   },
@@ -51,6 +55,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Crispy cauliflower florets tossed in a spicy Indo-Chinese sauce with garlic, onions, and peppers.",
         image: `${FOOD_PREFIX}chilli_gobi.jpg`,
+        tags: ["Vegetarian", "Spicy"],
       },
       {
         name: "Chilli Chicken",
@@ -58,6 +63,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Crispy fried chicken tossed in a home made chilli sauce with garlic, green chilies, onions, and bell peppers.",
         image: `${FOOD_PREFIX}chilli_chicken.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
       {
         name: "Chicken Majestic",
@@ -65,6 +71,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Crispy fried chicken tossed in a yoghurt & Pepper sauce with garlic & onions.",
         image: `${FOOD_PREFIX}chicken_majestic.jpg`,
+        tags: ["Non-Veg"],
       },
       {
         name: "Chilli Prawns",
@@ -72,6 +79,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Juicy prawns stir-fried in a spicy, tangy sauce with garlic, green chilies, onions, & bell peppers.",
         image: `${FOOD_PREFIX}chilli_prawns.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
       {
         name: "Chilli Fish",
@@ -79,13 +87,15 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Crispy fish tossed in a home made chilli sauce with garlic, green chilies, onions, and bell peppers.",
         image: `${FOOD_PREFIX}chilli_fish.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
       {
         name: "Chilli Paneer",
         price: "€13.99",
         description:
           "Spicy symphony of paneer, served hot and smooth for a flavourful explosion.",
-        image: `${FOOD_PREFIX}chilli_paneer.jpg`,
+        image: `/images/chilli_paneer.png`,
+        tags: ["Vegetarian", "Spicy"],
       },
       {
         name: "Paneer Majestic",
@@ -93,6 +103,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Sweet and peppery symphony of Paneer, served hot and smooth for a flavourful explosion.",
         image: `${FOOD_PREFIX}paneer_majestic.jpg`,
+        tags: ["Vegetarian"],
       },
     ],
   },
@@ -106,6 +117,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Indulge in succulent tandoor chicken bathed in rich, buttery tomato curry sauce perfection.",
         image: `${FOOD_PREFIX}butter_chicken.jpg`,
+        tags: ["Non-Veg", "Bestseller"],
       },
       {
         name: "Chicken Tikka Masala",
@@ -113,6 +125,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Grilled chicken pieces cooked in a spicy tomato-based sauce with bell peppers and aromatic spices.",
         image: `${FOOD_PREFIX}chicken_tikka_masala.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
       {
         name: "Kadai Paneer",
@@ -120,6 +133,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Paneer cubes cooked in a spiced tomato-based gravy with bell peppers, onions, and aromatic spices.",
         image: `${FOOD_PREFIX}kadai_paneer.jpg`,
+        tags: ["Vegetarian", "Spicy"],
       },
       {
         name: "Kadai Chicken",
@@ -127,6 +141,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Chicken cooked in a spiced tomato-based gravy with bell peppers, onions, and aromatic spices.",
         image: `${FOOD_PREFIX}tikka_masala.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
       {
         name: "Gobi Masala",
@@ -134,6 +149,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Cauliflower cooked in a spiced tomato-onion gravy with aromatic herbs and seasonings.",
         image: `${FOOD_PREFIX}gobi_masala.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Dal Paneer",
@@ -141,6 +157,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A hearty Indian curry made with yellow lentils and soft paneer cubes, simmered with tomatoes and garlic.",
         image: `${FOOD_PREFIX}dhal_paneer.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Paneer Tikka Masala",
@@ -148,6 +165,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Grilled paneer immersed in a tantalizing masala for a flavour explosion.",
         image: `${FOOD_PREFIX}paneer_tikka_masala.jpg`,
+        tags: ["Vegetarian", "Spicy"],
       },
       {
         name: "Paneer Butter Masala",
@@ -155,6 +173,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Classic curry blending succulent paneer, rich butter, and cashew cream for a rich, indulgent flavour.",
         image: `${FOOD_PREFIX}paneer_butter_masala.jpg`,
+        tags: ["Vegetarian", "Bestseller"],
       },
       {
         name: "Palak Paneer",
@@ -162,6 +181,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Soft paneer cubes in a smooth, spiced spinach gravy with cream. Light, wholesome, and full of flavour.",
         image: `${FOOD_PREFIX}palak_paneer.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Palak Dal",
@@ -169,6 +189,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A comforting lentil curry made with spinach, ripe tomatoes, garlic, and Indian spices. Light, tangy, and full of flavour.",
         image: `${FOOD_PREFIX}palak_chicken.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Tomato Dal",
@@ -176,6 +197,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A comforting lentil curry made with ripe tomatoes, garlic, and Indian spices. Light, tangy, and full of flavour.",
         image: `${FOOD_PREFIX}tomato_dhal.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Aloo Gobi",
@@ -183,6 +205,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A classic North Indian curry made with potatoes and cauliflowers cooked in a mildly spiced tomato-onion gravy. Comforting and flavourful.",
         image: `${FOOD_PREFIX}aloo_gobi.jpg`,
+        tags: ["Vegetarian"],
       },
     ],
   },
@@ -196,6 +219,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Flaky South Indian flatbread served with a rich and spiced chicken curry.",
         image: `${FOOD_PREFIX}parota__chicken_curry.jpg`,
+        tags: ["Non-Veg"],
       },
       {
         name: "Andhra Chicken Curry",
@@ -203,6 +227,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A fiery South Indian chicken curry from Andhra, cooked with onions, tomatoes, chili, and bold spices for a rich, spicy flavour.",
         image: `${FOOD_PREFIX}andhra_chicken_curry.jpg`,
+        tags: ["Non-Veg", "Spicy"],
       },
     ],
   },
@@ -216,6 +241,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Marinated in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
         image: `${FOOD_PREFIX}chicken_pakodi.jpg`,
+        tags: ["Non-Veg"],
       },
       {
         name: "Royyala Pakodi",
@@ -223,6 +249,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Marinated prawn in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
         image: `/images/royyala_pakodi.png`,
+        tags: ["Non-Veg"],
       },
       {
         name: "Gobi Pakodi",
@@ -230,6 +257,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Cauliflower florets marinated with ginger, garlic, chili, and spices, then deep-fried until golden and crispy.",
         image: `${FOOD_PREFIX}gobi_pakodi.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Samosa",
@@ -237,6 +265,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Crispy pastry filled with spiced potatoes and peas, served with fresh green mint chutney.",
         image: `${FOOD_PREFIX}samosa.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Fish Pakodi",
@@ -244,6 +273,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Marinated boneless fish fillets in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
         image: `${FOOD_PREFIX}fish_pakodi.jpg`,
+        tags: ["Non-Veg"],
       },
     ],
   },
@@ -257,6 +287,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Tandoor-baked flatbread topped with fresh garlic and butter. Flavourful and aromatic.",
         image: `${FOOD_PREFIX}garlic_naan.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Tawa Roti",
@@ -264,6 +295,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Traditional Indian whole wheat flatbread, freshly made on a hot iron griddle. Soft, wholesome, and perfect with any curry.",
         image: `${FOOD_PREFIX}tawa_roti.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Malabar Parota",
@@ -271,6 +303,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Layered and flaky South Indian flatbread, soft inside and crisp outside. Best enjoyed with a rich curry.",
         image: `${FOOD_PREFIX}malabar_parota.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Butter Naan",
@@ -278,6 +311,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Soft tandoor-baked flatbread brushed with butter. Ideal with curries.",
         image: `${FOOD_PREFIX}butter_naan.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Special Naan",
@@ -285,6 +319,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Tandoor-baked flatbread topped with fresh paneer and garlic. Flavourful and aromatic.",
         image: `${FOOD_PREFIX}special_naan.jpg`,
+        tags: ["Vegetarian"],
       },
     ],
   },
@@ -298,6 +333,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A comforting and wholesome dish of yellow lentils cooked with mild spices, served over steamed basmati rice. Perfect for little ones.",
         image: `${FOOD_PREFIX}tomato_dhal.jpg`,
+        tags: ["Vegetarian"],
       },
       {
         name: "Joghurt-Dal Reis",
@@ -305,6 +341,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A mild lentil curry made with creamy yogurt and gentle Indian spices, served with steamed basmati rice.",
         image: `${FOOD_PREFIX}dhal_paneer.jpg`,
+        tags: ["Vegetarian"],
       },
     ],
   },
@@ -318,6 +355,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "Soft, deep-fried milk dumplings soaked in fragrant sugar syrup with cardamom.",
         image: `${FOOD_PREFIX}gulab_jamun.jpg`,
+        tags: ["Vegetarian", "Sweet"],
       },
       {
         name: "Double-ka-Meetha",
@@ -325,6 +363,7 @@ export const menuCategories: MenuCategory[] = [
         description:
           "A rich Indian dessert made with fried bread soaked in milk, sugar, saffron, and garnished with nuts. Sweet and indulgent.",
         image: `${FOOD_PREFIX}doublekameetha.jpg`,
+        tags: ["Vegetarian", "Sweet"],
       },
     ],
   },

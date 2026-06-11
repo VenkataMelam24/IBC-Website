@@ -25,7 +25,7 @@ export function MenuCardGridSection({
               : ""
           }
         >
-          <div className="mb-6 flex items-center gap-4">
+          <div className="mb-8">
             <h2
               className={
                 isMaroon
@@ -35,7 +35,7 @@ export function MenuCardGridSection({
             >
               {category.title}
             </h2>
-            <div className={isMaroon ? "h-px flex-1 bg-cream/20" : "h-px flex-1 bg-border/70"} />
+            <div className={isMaroon ? "mt-2.5 h-1 w-10 rounded-full bg-accent" : "mt-2.5 h-1 w-10 rounded-full bg-primary"} />
           </div>
 
           <div
@@ -48,22 +48,25 @@ export function MenuCardGridSection({
                 <article
                   className={
                     isMaroon
-                      ? "group overflow-hidden rounded-[1.35rem] border border-cream/18 bg-[hsl(var(--primary)/0.32)]"
-                      : "group overflow-hidden rounded-[1.35rem] border border-border bg-card shadow-luxury"
+                      ? "group overflow-hidden rounded-[1.35rem] border border-cream/18 bg-[hsl(var(--primary)/0.32)] transition-all duration-300 hover:-translate-y-1.5 hover:border-cream/30 hover:shadow-[0_20px_50px_-16px_hsl(var(--primary)/0.5)]"
+                      : "group overflow-hidden rounded-[1.35rem] border border-border bg-card shadow-luxury transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-[0_20px_50px_-16px_hsl(var(--primary)/0.28)]"
                   }
                 >
                   <MenuImage src={item.image} alt={item.name} className="rounded-b-none" />
-                  <div className="p-4">
+                  <div className="p-5">
                     <div className="flex items-start justify-between gap-3">
-                      <h3 className={isMaroon ? "font-heading text-2xl text-cream" : "font-heading text-2xl text-foreground"}>
+                      <h3 className={isMaroon ? "font-heading text-xl font-semibold leading-snug text-cream" : "font-heading text-xl font-semibold leading-snug text-foreground"}>
                         {item.name}
                       </h3>
-                      <p className={isMaroon ? "text-sm font-semibold text-accent" : "text-sm font-semibold text-primary"}>
+                      <span className={isMaroon
+                        ? "shrink-0 rounded-full bg-accent/20 px-2.5 py-0.5 text-xs font-bold tracking-wide text-accent"
+                        : "shrink-0 rounded-full bg-primary/8 px-2.5 py-0.5 text-xs font-bold tracking-wide text-primary"
+                      }>
                         {item.price}
-                      </p>
+                      </span>
                     </div>
                     {item.description ? (
-                      <p className={isMaroon ? "mt-2 text-sm leading-relaxed text-cream/78" : "mt-2 text-sm leading-relaxed text-muted-foreground"}>
+                      <p className={isMaroon ? "mt-2 text-sm leading-relaxed text-cream/70" : "mt-2 text-sm leading-relaxed text-muted-foreground"}>
                         {item.description}
                       </p>
                     ) : null}

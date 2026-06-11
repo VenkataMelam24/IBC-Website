@@ -37,7 +37,7 @@ export function OrderOnlineSection() {
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Craving authentic biryani or a curry fix? Order your favourite IBC dishes straight
+              Craving a biryani or a curry fix? Order your favourite IBC dishes straight
               to your door through Uber Eats, Lieferando, or Wolt. Our very own IBC webshop
               is also launching soon. Stay tuned.
             </p>

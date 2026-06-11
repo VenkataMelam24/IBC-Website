@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 const dishes = [
   {
     name: "Chicken Dum Biryani",
-    note: "Fragrant basmati rice, authentic spice blend, and slow-cooked chicken pieces.",
+    note: "Fragrant basmati rice, a rich spice blend, and slow-cooked chicken pieces.",
     image: encodeURI("/images/13001357_ibc  indian biryani company_Food_chicken_biryani.jpg"),
   },
   {
@@ -35,7 +35,7 @@ export function SignatureDishesSection() {
           </h2>
           <div className="mt-3 h-1 w-20 bg-primary" />
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            A premium menu built on authentic Indian spices and elegant presentation.
+            A premium menu built on the finest Indian spices and elegant presentation.
           </p>
         </Reveal>
 

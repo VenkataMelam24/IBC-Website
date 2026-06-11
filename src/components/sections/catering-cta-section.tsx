@@ -31,7 +31,7 @@ export function CateringCtaSection() {
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Corporate events, birthdays, weddings, and private gatherings. Experience authentic
+              Corporate events, birthdays, weddings, and private gatherings. Experience real
               Indian hospitality with IBC catering.
             </p>
             <div className="mt-8">

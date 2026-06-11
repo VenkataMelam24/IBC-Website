@@ -16,12 +16,12 @@ const services = [
   {
     icon: CalendarCheck,
     title: "Catering",
-    description: "Celebrate at IBC or bring IBC to your celebration. From birthdays and anniversaries to achievements, family gatherings, and office events, we serve authentic Indian food for every special moment at our restaurant or at yours.",
+    description: "Celebrate at IBC or bring IBC to your celebration. From birthdays and anniversaries to achievements, family gatherings, and office events, we serve real Indian food for every special moment at our restaurant or at yours.",
   },
 ];
 
 const specialities = [
-  "Authentic Indian Spices",
+  "Premium Indian Spices",
   "Signature Dum Biryani",
   "Modern Dining Experience",
 ];
@@ -62,12 +62,12 @@ export function BrandStorySection() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
               <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
-                Rooted in Authentic Indian Flavor.
+                Rooted in Real Indian Flavour.
               </h2>
               <div className="mt-3 h-1 w-20 bg-primary" />
               <p className="mt-6 max-w-[48ch] text-base leading-relaxed text-muted-foreground md:text-lg">
                 From aromatic biryanis to vibrant Indian favourites, IBC focuses on rich flavour,
-                authentic spices, and premium hospitality in the heart of Berlin.
+                real spices, and premium hospitality in the heart of Berlin.
               </p>
               <ul className="mt-7 space-y-3">
                 {specialities.map((item) => (
@@ -83,7 +83,7 @@ export function BrandStorySection() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image
                   src="/images/spices.png"
-                  alt="Authentic Indian spices — cardamom, star anise, turmeric, cumin, chillies, coriander"
+                  alt="Indian spices — cardamom, star anise, turmeric, cumin, chillies, coriander"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

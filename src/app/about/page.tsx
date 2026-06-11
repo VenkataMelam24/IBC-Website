@@ -5,8 +5,8 @@ import { ButtonLink } from "@/components/ui/button";
 const pillars = [
   {
     tag: "Our Roots",
-    title: "Authentic Biryani, Always",
-    text: "Every biryani we serve is built on authentic recipes, quality ingredients, and time-honoured cooking techniques. Layered spices, fragrant basmati rice, and a process that never cuts corners.",
+    title: "Real Biryani, Always",
+    text: "Every biryani we serve is built on time-tested recipes, quality ingredients, and time-honoured cooking techniques. Layered spices, fragrant basmati rice, and a process that never cuts corners.",
   },
   {
     tag: "Our Edge",
@@ -35,7 +35,7 @@ export default function AboutPage() {
           <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted-foreground md:text-lg">
             IBC is a team of Indian friends brought together by a shared love for great food,
             technology, and big dreams. We launched in Berlin in July 2025 with one goal in mind:
-            to bring the real taste of authentic biryani to Europe. And we are just getting started.
+            to bring the real taste of real biryani to Europe. And we are just getting started.
           </p>
           <div className="mt-8">
             <ButtonLink href="/menu" variant="primary">Explore Our Menu</ButtonLink>

@@ -46,7 +46,10 @@ export function Footer() {
     <footer className="bg-primary">
       <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-10">
         <div>
-          <p className="font-heading text-3xl font-bold tracking-tight text-primary-foreground">IBC</p>
+          <div className="flex flex-col items-start gap-0">
+            <span className="font-logo text-[1.85rem] font-bold leading-none tracking-wide text-primary-foreground">IBC</span>
+            <span className="text-[6.5px] font-bold uppercase tracking-[0.26em] text-primary-foreground/55">Indian Biryani Company</span>
+          </div>
           <p className="mt-4 max-w-md text-xs leading-relaxed text-primary-foreground/55">
             ⚠ Images shown on this website are for reference purposes only and may not represent
             the exact appearance of the actual dishes served.
