@@ -110,7 +110,7 @@ export function HeroSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent/90">
               {slide.eyebrow}
             </p>
-            <h1 className="mt-5 whitespace-pre-line font-heading text-4xl font-bold leading-[1.06] text-primary-foreground sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 whitespace-pre-line font-heading text-4xl font-bold leading-[1.3] text-primary-foreground sm:text-5xl md:text-6xl">
               {slide.headline}
             </h1>
             <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-primary-foreground/85 md:text-lg">

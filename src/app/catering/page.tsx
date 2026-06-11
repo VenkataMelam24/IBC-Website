@@ -51,7 +51,7 @@ export default function CateringPage() {
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/60">
               IBC Catering
             </p>
-            <h1 className="mt-4 font-body text-4xl font-bold leading-[1.08] text-foreground sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.3] text-foreground sm:text-5xl lg:text-[3.25rem]">
               Catering<br />Service.
             </h1>
             <div className="mt-4 h-1 w-16 bg-primary" />
@@ -98,7 +98,7 @@ export default function CateringPage() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <Reveal>
             <div className="text-center">
-              <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
                 Catering Menu Topsellers.
               </h2>
               <div className="mx-auto mt-3 h-1 w-20 bg-primary" />
@@ -128,7 +128,7 @@ export default function CateringPage() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
 
           <Reveal>
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
               Two Ways to Celebrate with IBC.
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
@@ -139,7 +139,7 @@ export default function CateringPage() {
             <Reveal>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">In-House</p>
-                <h3 className="mt-3 font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                <h3 className="mt-3 font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-4xl">
                   Celebrate at IBC.
                 </h3>
                 <div className="mt-4 h-0.5 w-12 bg-primary/30" />
@@ -192,7 +192,7 @@ export default function CateringPage() {
             <Reveal delay={0.1}>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">At Your Venue</p>
-                <h3 className="mt-3 font-heading text-3xl font-bold leading-tight text-foreground md:text-4xl">
+                <h3 className="mt-3 font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-4xl">
                   IBC Comes to You.
                 </h3>
                 <div className="mt-4 h-0.5 w-12 bg-primary/30" />
@@ -229,7 +229,7 @@ export default function CateringPage() {
           <Reveal>
             <div className="flex flex-wrap items-start justify-between gap-8">
               <div>
-                <h2 className="font-heading text-4xl font-bold leading-tight text-primary-foreground md:text-5xl">
+                <h2 className="font-heading text-4xl font-bold leading-[1.35] text-primary-foreground md:text-5xl">
                   What Our Guests Say.
                 </h2>
                 <div className="mt-3 h-1 w-20 bg-accent" />

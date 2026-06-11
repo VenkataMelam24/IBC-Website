@@ -32,7 +32,7 @@ export function OrderOnlineSection() {
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-muted-foreground">
               Order Online
             </p>
-            <h2 className="mt-3 font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-3 font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
               Get IBC Delivered to You.
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />

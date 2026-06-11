@@ -29,7 +29,7 @@ export default function MenuPage() {
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/60">
               IBC Berlin
             </p>
-            <h1 className="mt-4 font-body text-4xl font-bold leading-[1.08] text-foreground sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.3] text-foreground sm:text-5xl lg:text-[3.25rem]">
               Our Menu.
             </h1>
             <div className="mt-4 h-1 w-16 bg-primary" />

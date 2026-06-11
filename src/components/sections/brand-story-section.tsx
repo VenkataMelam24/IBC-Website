@@ -32,7 +32,7 @@ export function BrandStorySection() {
       <section className="border-t border-border py-14 md:py-20">
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <Reveal>
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
               How to Enjoy IBC
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
@@ -61,7 +61,7 @@ export function BrandStorySection() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <Reveal>
-              <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
                 Rooted in Real Indian Flavour.
               </h2>
               <div className="mt-3 h-1 w-20 bg-primary" />

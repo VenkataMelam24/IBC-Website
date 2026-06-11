@@ -103,7 +103,7 @@ export function MenuPageContent() {
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-10 lg:py-20">
           {/* Biryanis */}
           <div>
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">Biryanis</h2>
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">Biryanis</h2>
             <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />
             <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
               Each full tray serves 10–12 people
@@ -121,7 +121,7 @@ export function MenuPageContent() {
 
           {/* Appetizers */}
           <div className="mt-16">
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">Appetizers</h2>
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">Appetizers</h2>
             <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />
             <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/8 px-3 py-1 text-xs font-semibold text-primary">
               Each full tray serves 10–12 people
@@ -140,7 +140,7 @@ export function MenuPageContent() {
 
           {/* Curries */}
           <div className="mt-16">
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">Curries</h2>
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">Curries</h2>
             <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -156,7 +156,7 @@ export function MenuPageContent() {
 
           {/* Add-ons */}
           <div className="mt-16">
-            <h2 className="font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl">Add-ons</h2>
+            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">Add-ons</h2>
             <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -203,7 +203,7 @@ export function MenuPageContent() {
 
             <div className="px-6 pb-6 pt-5 md:px-8">
               <div className="flex items-start justify-between gap-3">
-                <h3 className="font-heading text-3xl leading-tight text-foreground">{selectedItem.name}</h3>
+                <h3 className="font-heading text-3xl leading-[1.35] text-foreground">{selectedItem.name}</h3>
                 <p className="pt-1 text-lg font-semibold text-primary">{selectedItem.price}</p>
               </div>
 

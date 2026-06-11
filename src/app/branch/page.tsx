@@ -99,7 +99,7 @@ export default function BranchPage() {
                 <MapPin className="h-4 w-4" />
                 {branch.city}
               </p>
-              <h3 className="mt-4 font-heading text-xl font-semibold leading-[1.02] text-foreground md:text-2xl">
+              <h3 className="mt-4 font-heading text-xl font-semibold leading-[1.3] text-foreground md:text-2xl">
                 {branch.displayTitle}
               </h3>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{branch.address}</p>

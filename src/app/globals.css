@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "TanMonCheri";
+  src: url("/fonts/tan-mon-cheri.woff2") format("woff2"),
+       url("/fonts/tan-mon-cheri.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: 38 48% 95%;
   --foreground: 20 30% 16%;
@@ -58,7 +67,9 @@ body {
 }
 
 .font-heading {
-  font-family: var(--font-heading), sans-serif;
+  font-family: var(--font-cinzel), var(--font-heading), sans-serif;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
 }
 
 .font-body {
