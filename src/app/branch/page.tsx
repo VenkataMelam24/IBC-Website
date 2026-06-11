@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Compass, MapPin, Phone, Search } from "lucide-react";
 import { OpeningTimesButton } from "@/components/ui/opening-times-button";
 import { Reveal } from "@/components/ui/reveal";
+import { BranchSlideshow } from "@/components/ui/branch-slideshow";
 import { branches } from "@/data/branches";
 
 const fallbackBranch = {
@@ -81,18 +82,7 @@ export default function BranchPage() {
       <section className="mx-auto w-full max-w-7xl px-6 py-10 md:py-12 lg:px-10 lg:py-14">
         <Reveal>
           <div className="grid gap-5 rounded-[2rem] bg-[#f8f1ea] p-4 shadow-luxury md:p-5 xl:grid-cols-[1.1fr_1fr_0.86fr]">
-            <article className="relative overflow-hidden rounded-[1.45rem]">
-              <Image
-                src="/images/branch-interior.png"
-                alt="IBC Charlottenburg restaurant interior"
-                width={900}
-                height={900}
-                className="h-full min-h-[330px] w-full object-cover"
-              />
-              <span className="absolute left-4 top-4 rounded-full bg-primary/92 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cream">
-                Flagship
-              </span>
-            </article>
+            <BranchSlideshow />
 
             <article className="rounded-[1.45rem] border border-primary/12 bg-background p-6 md:p-7">
               <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary/82">
