@@ -1,15 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const slides = [
-  "/images/charlottenburg-1.png",
-  "/images/charlottenburg-2.png",
-  "/images/charlottenburg-3.png",
-  "/images/charlottenburg-4.png",
-  "/images/charlottenburg-5.png",
-  "/images/charlottenburg-6.png",
+  "/images/charlottenburg-1.jpg",
+  "/images/charlottenburg-2.jpg",
+  "/images/charlottenburg-3.jpg",
+  "/images/charlottenburg-4.jpg",
+  "/images/charlottenburg-5.jpg",
+  "/images/charlottenburg-6.jpg",
 ];
 
 export function BranchSlideshow() {
@@ -25,13 +24,11 @@ export function BranchSlideshow() {
   return (
     <article className="relative overflow-hidden rounded-[1.45rem]">
       {slides.map((src, i) => (
-        <Image
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
           key={src}
           src={src}
           alt={`IBC Charlottenburg — photo ${i + 1}`}
-          width={900}
-          height={900}
-          priority={i === 0}
           className={`h-full min-h-[330px] w-full object-cover transition-opacity duration-700 ${
             i === current ? "opacity-100" : "absolute inset-0 opacity-0"
           }`}
@@ -42,7 +39,6 @@ export function BranchSlideshow() {
         Flagship
       </span>
 
-      {/* Dot indicators */}
       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5">
         {slides.map((_, i) => (
           <button

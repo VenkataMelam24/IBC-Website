@@ -1,5 +1,13 @@
 import nodemailer from "nodemailer";
 
+function esc(s: unknown): string {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
@@ -30,23 +38,27 @@ export async function POST(request: Request) {
       notes,
     } = data;
 
+    if (!name || !email || !phone || !bookingType || !date || !guests) {
+      return Response.json({ success: false, error: "Missing required fields" }, { status: 400 });
+    }
+
     const isInhouse = bookingType === "inhouse";
 
     const detailsHtml = isInhouse ? `
       <tr><td style="color:#888;padding:6px 0">Booking Type</td><td style="font-weight:600;padding:6px 0">In-House (at IBC Restaurant)</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Date</td><td style="font-weight:600;padding:6px 0">${date}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Time</td><td style="font-weight:600;padding:6px 0">${startTime} – ${endTime}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Number of Guests</td><td style="font-weight:600;padding:6px 0">${guests}</td></tr>
-      ${selectedDishes ? `<tr><td style="color:#888;padding:6px 0">Dishes of Interest</td><td style="font-weight:600;padding:6px 0">${selectedDishes}</td></tr>` : ""}
-      ${notes ? `<tr><td style="color:#888;padding:6px 0">Special Requirements</td><td style="font-weight:600;padding:6px 0">${notes}</td></tr>` : ""}
+      <tr><td style="color:#888;padding:6px 0">Date</td><td style="font-weight:600;padding:6px 0">${esc(date)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Time</td><td style="font-weight:600;padding:6px 0">${esc(startTime)} – ${esc(endTime)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Number of Guests</td><td style="font-weight:600;padding:6px 0">${esc(guests)}</td></tr>
+      ${selectedDishes ? `<tr><td style="color:#888;padding:6px 0">Dishes of Interest</td><td style="font-weight:600;padding:6px 0">${esc(selectedDishes)}</td></tr>` : ""}
+      ${notes ? `<tr><td style="color:#888;padding:6px 0">Special Requirements</td><td style="font-weight:600;padding:6px 0">${esc(notes)}</td></tr>` : ""}
     ` : `
       <tr><td style="color:#888;padding:6px 0">Booking Type</td><td style="font-weight:600;padding:6px 0">At Your Venue</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Postcode</td><td style="font-weight:600;padding:6px 0">${postcode}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Date</td><td style="font-weight:600;padding:6px 0">${date}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Approx. Guests</td><td style="font-weight:600;padding:6px 0">${guests}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Menu Items</td><td style="font-weight:600;padding:6px 0">${menuItems}</td></tr>
-      <tr><td style="color:#888;padding:6px 0">Estimated Total</td><td style="font-weight:600;padding:6px 0">${estimatedTotal} (excl. VAT)</td></tr>
-      ${notes ? `<tr><td style="color:#888;padding:6px 0">Special Requirements</td><td style="font-weight:600;padding:6px 0">${notes}</td></tr>` : ""}
+      <tr><td style="color:#888;padding:6px 0">Postcode</td><td style="font-weight:600;padding:6px 0">${esc(postcode)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Date</td><td style="font-weight:600;padding:6px 0">${esc(date)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Approx. Guests</td><td style="font-weight:600;padding:6px 0">${esc(guests)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Menu Items</td><td style="font-weight:600;padding:6px 0">${esc(menuItems)}</td></tr>
+      <tr><td style="color:#888;padding:6px 0">Estimated Total</td><td style="font-weight:600;padding:6px 0">${esc(estimatedTotal)} (excl. VAT)</td></tr>
+      ${notes ? `<tr><td style="color:#888;padding:6px 0">Special Requirements</td><td style="font-weight:600;padding:6px 0">${esc(notes)}</td></tr>` : ""}
     `;
 
     const emailBase = (title: string, intro: string, body: string) => `
@@ -73,7 +85,7 @@ export async function POST(request: Request) {
     // ── Email 1: Acknowledgement to customer ──
     const customerHtml = emailBase(
       "We've Received Your Enquiry!",
-      `Dear ${name}, thank you for your catering enquiry with Indian Biryani Company. We have received your request and our team will call you shortly to confirm all the details.`,
+      `Dear ${esc(name)}, thank you for your catering enquiry with Indian Biryani Company. We have received your request and our team will call you shortly to confirm all the details.`,
       detailsHtml
     );
 
@@ -89,9 +101,9 @@ export async function POST(request: Request) {
       "New Catering Enquiry",
       `A new catering enquiry has been submitted. Contact details below — please call the customer to confirm.`,
       `
-        <tr><td style="color:#888;padding:6px 0">Customer Name</td><td style="font-weight:600;padding:6px 0">${name}</td></tr>
-        <tr><td style="color:#888;padding:6px 0">Phone</td><td style="font-weight:600;padding:6px 0">${phone}</td></tr>
-        <tr><td style="color:#888;padding:6px 0">Email</td><td style="font-weight:600;padding:6px 0">${email}</td></tr>
+        <tr><td style="color:#888;padding:6px 0">Customer Name</td><td style="font-weight:600;padding:6px 0">${esc(name)}</td></tr>
+        <tr><td style="color:#888;padding:6px 0">Phone</td><td style="font-weight:600;padding:6px 0">${esc(phone)}</td></tr>
+        <tr><td style="color:#888;padding:6px 0">Email</td><td style="font-weight:600;padding:6px 0">${esc(email)}</td></tr>
         ${detailsHtml}
       `
     );

@@ -78,7 +78,6 @@ export default function CateringPage() {
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Link
               href="/catering/book"
-              target="_blank"
               className="inline-flex h-12 items-center rounded bg-primary px-7 text-sm font-bold text-primary-foreground transition hover:opacity-90"
             >
               Book Catering
@@ -154,13 +153,12 @@ export default function CateringPage() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   Your guests leave with smiles and full hearts.
                 </p>
-                <a
+                <Link
                   href="/catering/book"
-                  target="_blank"
                   className="mt-6 inline-flex h-11 items-center rounded bg-primary px-7 text-sm font-bold text-primary-foreground transition hover:opacity-90"
                 >
                   Book Catering
-                </a>
+                </Link>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -209,13 +207,12 @@ export default function CateringPage() {
                   On request, we also offer full-service catering including staff
                   and equipment for large-scale events.
                 </p>
-                <a
+                <Link
                   href="/catering/book"
-                  target="_blank"
                   className="mt-6 inline-flex h-11 items-center rounded bg-primary px-7 text-sm font-bold text-primary-foreground transition hover:opacity-90"
                 >
                   Book Catering
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
