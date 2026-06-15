@@ -42,8 +42,8 @@ export default function CateringPage() {
           />
         </div>
 
-        {/* Left-side gradient so text stays readable over the peach */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,hsl(25_60%_78%/0.92)_0%,hsl(25_60%_78%/0.70)_30%,hsl(25_60%_78%/0.20)_60%,transparent_80%)]" />
+        {/* Gradient overlay — full-coverage on mobile, left-side fade on desktop */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,hsl(25_60%_78%/0.78)_0%,hsl(25_60%_78%/0.92)_100%)] md:bg-[linear-gradient(90deg,hsl(25_60%_78%/0.92)_0%,hsl(25_60%_78%/0.70)_30%,hsl(25_60%_78%/0.20)_60%,transparent_80%)]" />
 
         {/* Content */}
         <div className="relative flex min-h-[55vh] w-full items-center px-6 py-14 lg:px-10">

@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-10 lg:py-20">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-muted-foreground">About IBC</p>
-          <h1 className="mt-4 font-heading text-5xl font-bold leading-[1.3] text-foreground md:text-6xl">
+          <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.3] text-foreground sm:text-5xl md:text-6xl">
             Born in Berlin.<br />Built on Biryani.
           </h1>
           <div className="mt-4 h-1 w-20 bg-primary" />
@@ -63,7 +63,7 @@ export default function AboutPage() {
 
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-[0.26em] text-muted-foreground">What Makes Us Different</p>
-              <h2 className="mt-4 font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+              <h2 className="mt-4 font-heading text-3xl font-bold leading-[1.35] text-foreground sm:text-4xl md:text-5xl">
                 Precision Cooking.<br />Perfect Every Time.
               </h2>
               <div className="mt-4 h-1 w-20 bg-primary" />
