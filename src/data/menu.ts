@@ -24,7 +24,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Aromatic basmati rice cooked with seasonal vegetables, herbs, and Indian spices for a flavourful vegetarian biryani.",
-        image: `${FOOD_PREFIX}veg_biryani.jpg`,
+        image: `/images/dish-veg-biryani.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -32,7 +32,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€15.99",
         description:
           "Aromatic basmati rice prepared with tender chicken, fragrant spices, and fresh herbs.",
-        image: `${FOOD_PREFIX}chicken_biryani.jpg`,
+        image: `/images/dish-chicken-biryani.jpg`,
         tags: ["Non-Veg", "Bestseller"],
       },
       {
@@ -40,7 +40,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€18.99",
         description:
           "Aromatic basmati rice prepared with tender mutton, fragrant spices, and fresh herbs.",
-        image: `${FOOD_PREFIX}mutton_biryani.jpg`,
+        image: `/images/dish-mutton-biryani.jpg`,
         tags: ["Non-Veg"],
       },
     ],
@@ -54,7 +54,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Crispy cauliflower florets tossed in a spicy Indo-Chinese sauce with garlic, onions, and peppers.",
-        image: `${FOOD_PREFIX}chilli_gobi.jpg`,
+        image: `/images/dish-chilli-gobi.jpg`,
         tags: ["Vegetarian", "Spicy"],
       },
       {
@@ -62,7 +62,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€12.99",
         description:
           "Crispy fried chicken tossed in a home made chilli sauce with garlic, green chilies, onions, and bell peppers.",
-        image: `${FOOD_PREFIX}chilli_chicken.jpg`,
+        image: `/images/dish-chilli-chicken.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
       {
@@ -70,7 +70,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€12.99",
         description:
           "Crispy fried chicken tossed in a yoghurt & Pepper sauce with garlic & onions.",
-        image: `${FOOD_PREFIX}chicken_majestic.jpg`,
+        image: `/images/dish-chicken-majestic.jpg`,
         tags: ["Non-Veg"],
       },
       {
@@ -78,7 +78,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Juicy prawns stir-fried in a spicy, tangy sauce with garlic, green chilies, onions, & bell peppers.",
-        image: `${FOOD_PREFIX}chilli_prawns.jpg`,
+        image: `/images/dish-chili-prawn.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
       {
@@ -86,7 +86,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Crispy fish tossed in a home made chilli sauce with garlic, green chilies, onions, and bell peppers.",
-        image: `${FOOD_PREFIX}chilli_fish.jpg`,
+        image: `/images/dish-chilli-fish.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
       {
@@ -94,7 +94,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Spicy symphony of paneer, served hot and smooth for a flavourful explosion.",
-        image: `/images/chilli_paneer.png`,
+        image: `/images/dish-chilli-paneer.jpg`,
         tags: ["Vegetarian", "Spicy"],
       },
       {
@@ -102,7 +102,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Sweet and peppery symphony of Paneer, served hot and smooth for a flavourful explosion.",
-        image: `${FOOD_PREFIX}paneer_majestic.jpg`,
+        image: `/images/dish-paneer-majestic.jpg`,
         tags: ["Vegetarian"],
       },
     ],
@@ -116,7 +116,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Indulge in succulent tandoor chicken bathed in rich, buttery tomato curry sauce perfection.",
-        image: `${FOOD_PREFIX}butter_chicken.jpg`,
+        image: `/images/dish-butter-chicken.jpg`,
         tags: ["Non-Veg", "Bestseller"],
       },
       {
@@ -124,7 +124,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Grilled chicken pieces cooked in a spicy tomato-based sauce with bell peppers and aromatic spices.",
-        image: `${FOOD_PREFIX}chicken_tikka_masala.jpg`,
+        image: `/images/dish-chicken-tikka-masala.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
       {
@@ -132,7 +132,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Paneer cubes cooked in a spiced tomato-based gravy with bell peppers, onions, and aromatic spices.",
-        image: `${FOOD_PREFIX}kadai_paneer.jpg`,
+        image: `/images/dish-kadai-paneer.jpg`,
         tags: ["Vegetarian", "Spicy"],
       },
       {
@@ -140,7 +140,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Chicken cooked in a spiced tomato-based gravy with bell peppers, onions, and aromatic spices.",
-        image: `${FOOD_PREFIX}tikka_masala.jpg`,
+        image: `/images/dish-kadai-chicken.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
       {
@@ -148,7 +148,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Cauliflower cooked in a spiced tomato-onion gravy with aromatic herbs and seasonings.",
-        image: `${FOOD_PREFIX}gobi_masala.jpg`,
+        image: `/images/dish-gobi-masala.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -156,7 +156,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "A hearty Indian curry made with yellow lentils and soft paneer cubes, simmered with tomatoes and garlic.",
-        image: `${FOOD_PREFIX}dhal_paneer.jpg`,
+        image: `/images/dish-dal-paneer.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -164,7 +164,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Grilled paneer immersed in a tantalizing masala for a flavour explosion.",
-        image: `${FOOD_PREFIX}paneer_tikka_masala.jpg`,
+        image: `/images/dish-paneer-tikka-masala.jpg`,
         tags: ["Vegetarian", "Spicy"],
       },
       {
@@ -172,7 +172,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Classic curry blending succulent paneer, rich butter, and cashew cream for a rich, indulgent flavour.",
-        image: `${FOOD_PREFIX}paneer_butter_masala.jpg`,
+        image: `/images/dish-paneer-butter-masala.jpg`,
         tags: ["Vegetarian", "Bestseller"],
       },
       {
@@ -180,7 +180,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Soft paneer cubes in a smooth, spiced spinach gravy with cream. Light, wholesome, and full of flavour.",
-        image: `${FOOD_PREFIX}palak_paneer.jpg`,
+        image: `/images/dish-palak-paneer.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -188,7 +188,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "A comforting lentil curry made with spinach, ripe tomatoes, garlic, and Indian spices. Light, tangy, and full of flavour.",
-        image: `${FOOD_PREFIX}palak_chicken.jpg`,
+        image: `/images/dish-palak-dal.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -196,7 +196,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€10.99",
         description:
           "A comforting lentil curry made with ripe tomatoes, garlic, and Indian spices. Light, tangy, and full of flavour.",
-        image: `${FOOD_PREFIX}tomato_dhal.jpg`,
+        image: `/images/dish-tomato-dal.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -204,7 +204,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "A classic North Indian curry made with potatoes and cauliflowers cooked in a mildly spiced tomato-onion gravy. Comforting and flavourful.",
-        image: `${FOOD_PREFIX}aloo_gobi.jpg`,
+        image: `/images/dish-aloo-gobi.jpg`,
         tags: ["Vegetarian"],
       },
     ],
@@ -218,7 +218,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Flaky South Indian flatbread served with a rich and spiced chicken curry.",
-        image: `${FOOD_PREFIX}parota__chicken_curry.jpg`,
+        image: `/images/dish-parota-chicken-curry.jpg`,
         tags: ["Non-Veg"],
       },
       {
@@ -226,7 +226,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€15.99",
         description:
           "A fiery South Indian chicken curry from Andhra, cooked with onions, tomatoes, chili, and bold spices for a rich, spicy flavour.",
-        image: `${FOOD_PREFIX}andhra_chicken_curry.jpg`,
+        image: `/images/dish-andhra-chicken-curry.jpg`,
         tags: ["Non-Veg", "Spicy"],
       },
     ],
@@ -240,7 +240,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€11.99",
         description:
           "Marinated in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
-        image: `${FOOD_PREFIX}chicken_pakodi.jpg`,
+        image: `/images/dish-chicken-pakodi.jpg`,
         tags: ["Non-Veg"],
       },
       {
@@ -248,7 +248,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€14.99",
         description:
           "Marinated prawn in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
-        image: `/images/royyala_pakodi.png`,
+        image: `/images/dish-prawn-pakodi.jpg`,
         tags: ["Non-Veg"],
       },
       {
@@ -256,7 +256,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€11.99",
         description:
           "Cauliflower florets marinated with ginger, garlic, chili, and spices, then deep-fried until golden and crispy.",
-        image: `${FOOD_PREFIX}gobi_pakodi.jpg`,
+        image: `/images/dish-gobi-pakodi.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -264,7 +264,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€5.99",
         description:
           "Crispy pastry filled with spiced potatoes and peas, served with fresh green mint chutney.",
-        image: `${FOOD_PREFIX}samosa.jpg`,
+        image: `/images/dish-samosa.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -272,7 +272,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€13.99",
         description:
           "Marinated boneless fish fillets in garlic, ginger, red chilli, and curry leaves, then deep-fried to crispy perfection.",
-        image: `${FOOD_PREFIX}fish_pakodi.jpg`,
+        image: `/images/dish-fish-pakodi.jpg`,
         tags: ["Non-Veg"],
       },
     ],
@@ -286,7 +286,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€3.99",
         description:
           "Tandoor-baked flatbread topped with fresh garlic and butter. Flavourful and aromatic.",
-        image: `${FOOD_PREFIX}garlic_naan.jpg`,
+        image: `/images/dish-garlic-naan.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -294,7 +294,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€3.50",
         description:
           "Traditional Indian whole wheat flatbread, freshly made on a hot iron griddle. Soft, wholesome, and perfect with any curry.",
-        image: `${FOOD_PREFIX}tawa_roti.jpg`,
+        image: `/images/dish-tawa-roti.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -302,7 +302,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€3.50",
         description:
           "Layered and flaky South Indian flatbread, soft inside and crisp outside. Best enjoyed with a rich curry.",
-        image: `${FOOD_PREFIX}malabar_parota.jpg`,
+        image: `/images/dish-malabar-parota.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -310,7 +310,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€3.50",
         description:
           "Soft tandoor-baked flatbread brushed with butter. Ideal with curries.",
-        image: `${FOOD_PREFIX}butter_naan.jpg`,
+        image: `/images/dish-butter-naan.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -318,7 +318,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€5.00",
         description:
           "Tandoor-baked flatbread topped with fresh paneer and garlic. Flavourful and aromatic.",
-        image: `${FOOD_PREFIX}special_naan.jpg`,
+        image: `/images/dish-special-naan.jpg`,
         tags: ["Vegetarian"],
       },
     ],
@@ -332,7 +332,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€7.99",
         description:
           "A comforting and wholesome dish of yellow lentils cooked with mild spices, served over steamed basmati rice. Perfect for little ones.",
-        image: `${FOOD_PREFIX}tomato_dhal.jpg`,
+        image: `/images/dish-ghee-dal-rice.jpg`,
         tags: ["Vegetarian"],
       },
       {
@@ -340,7 +340,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€7.99",
         description:
           "A mild lentil curry made with creamy yogurt and gentle Indian spices, served with steamed basmati rice.",
-        image: `${FOOD_PREFIX}dhal_paneer.jpg`,
+        image: `/images/dish-joghurt-dal-reis.jpg`,
         tags: ["Vegetarian"],
       },
     ],
@@ -354,7 +354,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€4.99",
         description:
           "Soft, deep-fried milk dumplings soaked in fragrant sugar syrup with cardamom.",
-        image: `${FOOD_PREFIX}gulab_jamun.jpg`,
+        image: `/images/dish-gulab-jamun.jpg`,
         tags: ["Vegetarian", "Sweet"],
       },
       {
@@ -362,7 +362,7 @@ export const menuCategories: MenuCategory[] = [
         price: "€4.99",
         description:
           "A rich Indian dessert made with fried bread soaked in milk, sugar, saffron, and garnished with nuts. Sweet and indulgent.",
-        image: `${FOOD_PREFIX}doublekameetha.jpg`,
+        image: `/images/dish-double-ka-meetha.jpg`,
         tags: ["Vegetarian", "Sweet"],
       },
     ],

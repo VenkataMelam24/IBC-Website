@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 const slides = [
+  "/images/charlottenburg-restaurant.jpg",
   "/images/charlottenburg-1.jpg",
   "/images/charlottenburg-2.jpg",
   "/images/charlottenburg-3.jpg",
