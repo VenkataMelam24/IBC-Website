@@ -211,9 +211,9 @@ export function MenuPriceEditor({
       </div>
 
       {tab === "catering" ? (
-        <PriceTable title="Catering Menu Prices" items={cateringItems} onSave={handleSave} />
+        <PriceTable key="catering" title="Catering Menu Prices" items={cateringItems} onSave={handleSave} />
       ) : (
-        <PriceTable title="Dine-in Menu Prices" items={dineinItems} onSave={handleSave} />
+        <PriceTable key="dinein" title="Dine-in Menu Prices" items={dineinItems} onSave={handleSave} />
       )}
     </div>
   );
