@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { ButtonLink } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn about Indian Biryani Company — our story, our passion for authentic Indian cooking, and our mission to bring the best biryani to Berlin.",
+  alternates: { canonical: "https://theibc.de/about" },
+};
 
 const pillars = [
   {

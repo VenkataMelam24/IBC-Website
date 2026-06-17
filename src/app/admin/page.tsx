@@ -33,7 +33,8 @@ export default function AdminLoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-[hsl(38_48%_95%)] px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <Image src="/images/ibc-logo.png" alt="IBC" width={80} height={80} className="mx-auto" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="mx-auto h-16 w-auto" />
           <h1 className="mt-4 font-heading text-2xl font-bold text-foreground">Admin Login</h1>
           <p className="mt-1 text-sm text-muted-foreground">Indian Biryani Company</p>
         </div>

@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Compass, MapPin, Phone, Search } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Our Branch",
+  description:
+    "Find Indian Biryani Company in Berlin Charlottenburg — Hektorstraße 11, 10711 Berlin. Open Tue–Thu 16:00–22:00, Fri–Sun 12:00–22:00.",
+  alternates: { canonical: "https://theibc.de/branch" },
+};
 import { OpeningTimesButton } from "@/components/ui/opening-times-button";
 import { Reveal } from "@/components/ui/reveal";
 import { BranchSlideshow } from "@/components/ui/branch-slideshow";

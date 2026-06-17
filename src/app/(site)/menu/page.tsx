@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { MenuPageContent } from "@/components/menu/menu-page-content";
+
+export const metadata: Metadata = {
+  title: "Menu",
+  description:
+    "Explore the full Indian Biryani Company menu — dum biryani, grills, curries, starters, breads, and desserts. Authentic Indian flavours in Berlin Charlottenburg.",
+  alternates: { canonical: "https://theibc.de/menu" },
+};
 
 export default function MenuPage() {
   return (

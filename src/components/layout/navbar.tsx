@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:h-20 lg:px-10">
         <Link href="/" aria-label="Indian Biryani Company">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo.png" alt="IBC — Indian Biryani Company" className="h-9 w-auto md:h-10" />
+          <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="h-14 w-auto md:h-16" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

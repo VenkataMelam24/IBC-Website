@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CateringMarquee } from "@/components/sections/catering-marquee";
+
+export const metadata: Metadata = {
+  title: "Catering",
+  description:
+    "Indian Biryani Company offers premium catering for weddings, corporate events, and private parties in Berlin. Biryani trays, appetizers, curries and more delivered to your venue.",
+  alternates: { canonical: "https://theibc.de/catering" },
+};
 import { CalendarCheck, MapPin, PhoneCall, Utensils } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 
