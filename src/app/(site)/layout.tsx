@@ -5,12 +5,16 @@ import { Navbar } from "@/components/layout/navbar";
 export const metadata: Metadata = {
   metadataBase: new URL("https://theibc.de"),
   title: {
-    default: "Indian Biryani Company Berlin — Authentic Biryani & Catering",
-    template: "%s | Indian Biryani Company Berlin",
+    default: "IBC – Indian Biryani Company Berlin | Authentic Biryani & Catering",
+    template: "%s | IBC – Indian Biryani Company Berlin",
   },
   description:
-    "Berlin's favourite Indian restaurant. Authentic dum biryani, catering for events, and online delivery via Uber Eats, Lieferando & Wolt. Located in Charlottenburg.",
+    "IBC (Indian Biryani Company) — Berlin's favourite Indian restaurant in Charlottenburg. Authentic dum biryani, catering for events & weddings, delivery via Uber Eats, Lieferando & Wolt.",
   keywords: [
+    "IBC Berlin",
+    "IBC Indian restaurant",
+    "Indian Biryani Company",
+    "Indian Biryani Company Berlin",
     "Indian restaurant Berlin",
     "biryani Berlin",
     "Indian food Berlin",
@@ -18,16 +22,16 @@ export const metadata: Metadata = {
     "dum biryani",
     "Indian catering Berlin",
     "Charlottenburg restaurant",
-    "halal Berlin",
+    "theibc.de",
   ],
   openGraph: {
     type: "website",
     locale: "en_DE",
     url: "https://theibc.de",
-    siteName: "Indian Biryani Company Berlin",
-    title: "Indian Biryani Company Berlin — Authentic Biryani & Catering",
+    siteName: "IBC – Indian Biryani Company Berlin",
+    title: "IBC – Indian Biryani Company Berlin | Authentic Biryani & Catering",
     description:
-      "Berlin's favourite Indian restaurant. Authentic dum biryani, catering for events, and online delivery.",
+      "IBC (Indian Biryani Company) — Berlin's favourite Indian restaurant. Authentic dum biryani, catering for events, and online delivery.",
     images: [
       {
         url: "/images/hero-biryani.png",

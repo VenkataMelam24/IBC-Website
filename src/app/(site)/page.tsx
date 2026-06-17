@@ -5,18 +5,28 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { SignatureDishesSection } from "@/components/sections/signature-dishes-section";
 
 export const metadata: Metadata = {
-  title: "Indian Biryani Company Berlin — Authentic Biryani & Catering",
+  title: "IBC – Indian Biryani Company Berlin | Authentic Biryani & Catering",
   description:
-    "Experience Berlin's best Indian food at Indian Biryani Company, Charlottenburg. Authentic dum biryani, grills, curries, and full catering for events.",
+    "IBC (Indian Biryani Company) — Berlin's authentic Indian restaurant in Charlottenburg. Dum biryani, grills, curries, and full catering for events & weddings.",
   alternates: { canonical: "https://theibc.de" },
 };
 
 const restaurantSchema = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://theibc.de/#restaurant",
   name: "Indian Biryani Company",
-  image: "https://theibc.de/images/hero-biryani.png",
+  alternateName: ["IBC", "IBC Berlin", "Indian Biryani Company Berlin"],
+  description:
+    "IBC – Indian Biryani Company is Berlin's authentic Indian restaurant in Charlottenburg, specialising in dum biryani, curries, and catering for events.",
+  image: [
+    "https://theibc.de/images/hero-biryani.png",
+    "https://theibc.de/images/logo-new.png",
+  ],
+  logo: "https://theibc.de/images/logo-new.png",
   url: "https://theibc.de",
+  menu: "https://theibc.de/menu",
+  hasMap: "https://maps.google.com/?q=Hektorstraße+11,+10711+Berlin",
   telephone: "+4917737771839",
   address: {
     "@type": "PostalAddress",
@@ -24,6 +34,7 @@ const restaurantSchema = {
     addressLocality: "Berlin",
     postalCode: "10711",
     addressCountry: "DE",
+    addressRegion: "Berlin",
   },
   geo: {
     "@type": "GeoCoordinates",
@@ -44,10 +55,14 @@ const restaurantSchema = {
       closes: "22:00",
     },
   ],
-  servesCuisine: ["Indian", "Biryani"],
+  servesCuisine: ["Indian", "Biryani", "Hyderabadi", "South Indian"],
   priceRange: "€€",
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Credit Card",
+  areaServed: {
+    "@type": "City",
+    name: "Berlin",
+  },
 };
 
 export default function Home() {
