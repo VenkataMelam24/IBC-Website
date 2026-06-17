@@ -10,6 +10,7 @@ export function QuoteBuilder({
   customerName,
   customerEmail,
   initialItems,
+  priceMap,
   existingItems,
   existingDiscount,
   existingDescription,
@@ -19,6 +20,7 @@ export function QuoteBuilder({
   customerName: string;
   customerEmail: string;
   initialItems: string[];
+  priceMap: Record<string, number>;
   existingItems: QuoteItem[] | null;
   existingDiscount: number;
   existingDescription: string;
@@ -29,7 +31,7 @@ export function QuoteBuilder({
   const seedItems: QuoteItem[] =
     existingItems && existingItems.length > 0
       ? existingItems
-      : initialItems.map((name) => ({ name, qty: 1, price: 0 }));
+      : initialItems.map((name) => ({ name, qty: 1, price: priceMap[name] ?? 0 }));
 
   const [items, setItems] = useState<QuoteItem[]>(seedItems.length > 0 ? seedItems : [{ name: "", qty: 1, price: 0 }]);
   const [discount, setDiscount] = useState<number>(existingDiscount ?? 0);

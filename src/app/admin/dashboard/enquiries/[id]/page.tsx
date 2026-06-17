@@ -32,11 +32,27 @@ const statusBadge: Record<string, string> = {
 export default async function EnquiryDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const supabase = createServerClient();
-  const { data: booking, error } = await supabase
-    .from("catering_bookings")
-    .select("*")
-    .eq("id", id)
-    .single();
+
+  const [{ data: booking, error }, { data: menuItems }] = await Promise.all([
+    supabase.from("catering_bookings").select("*").eq("id", id).single(),
+    supabase.from("menu_items").select("name,price,menu_type").eq("active", true),
+  ]);
+
+  // Build a name→price map from all active menu items
+  // When a name appears in both dinein and catering, prefer catering price
+  const priceMap: Record<string, number> = {};
+  if (menuItems) {
+    for (const item of menuItems) {
+      if (item.menu_type === "dinein" && !(item.name in priceMap)) {
+        priceMap[item.name] = item.price;
+      }
+    }
+    for (const item of menuItems) {
+      if (item.menu_type === "catering") {
+        priceMap[item.name] = item.price;
+      }
+    }
+  }
 
   if (error || !booking) notFound();
 
@@ -135,6 +151,7 @@ export default async function EnquiryDetailPage({ params }: { params: Promise<{ 
             customerName={b.name}
             customerEmail={b.email}
             initialItems={initialItemNames}
+            priceMap={priceMap}
             existingItems={b.quote_items}
             existingDiscount={b.quote_discount ?? 0}
             existingDescription={b.quote_description ?? ""}

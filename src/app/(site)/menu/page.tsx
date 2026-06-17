@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MenuPageContent } from "@/components/menu/menu-page-content";
+import { createServerClient } from "@/lib/supabase";
+import type { CateringMenuCategory } from "@/data/catering-menu";
+import { cateringMenu as staticCateringMenu } from "@/data/catering-menu";
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -9,7 +12,41 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://theibc.de/menu" },
 };
 
-export default function MenuPage() {
+export default async function MenuPage() {
+  // Fetch catering prices from Supabase; fall back to static data on error
+  let cateringCategories: CateringMenuCategory[] = staticCateringMenu;
+  try {
+    const supabase = createServerClient();
+    const { data } = await supabase
+      .from("menu_items")
+      .select("name,category,price,price_label,image,serving_note,display_order")
+      .eq("menu_type", "catering")
+      .eq("active", true)
+      .order("display_order", { ascending: true });
+
+    if (data && data.length > 0) {
+      // Group into categories preserving order
+      const catMap = new Map<string, CateringMenuCategory>();
+      for (const row of data) {
+        if (!catMap.has(row.category)) {
+          catMap.set(row.category, {
+            category: row.category,
+            servingNote: row.serving_note ?? undefined,
+            items: [],
+          });
+        }
+        catMap.get(row.category)!.items.push({
+          name: row.name,
+          price: row.price,
+          priceLabel: row.price_label,
+          image: row.image,
+        });
+      }
+      cateringCategories = Array.from(catMap.values());
+    }
+  } catch {
+    // use static fallback
+  }
   return (
     <div className="bg-background">
 
@@ -48,7 +85,7 @@ export default function MenuPage() {
         </div>
       </section>
 
-      <MenuPageContent />
+      <MenuPageContent cateringCategories={cateringCategories} />
     </div>
   );
 }
