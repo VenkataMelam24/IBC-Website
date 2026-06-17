@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -67,26 +66,15 @@ export function HeroSection() {
           transition={{ duration: 1.1, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          {slide.bg === "video" ? (
-            <video
-              key={slide.id}
-              src={"video" in slide && slide.video ? slide.video : "/hero.mp4"}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="h-full w-full object-cover object-center"
-            />
-          ) : (
-            <Image
-              src={slide.image!}
-              alt={slide.eyebrow}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-          )}
+          <video
+            key={slide.id}
+            src={"video" in slide && slide.video ? slide.video : "/hero.mp4"}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover object-center"
+          />
         </motion.div>
       </AnimatePresence>
 
