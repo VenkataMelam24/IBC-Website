@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { createServerClient } from "@/lib/supabase";
 
 function esc(s: unknown): string {
   return String(s ?? "")
@@ -113,6 +114,21 @@ export async function POST(request: Request) {
       to: process.env.IBC_EMAIL,
       subject: `New Catering Enquiry – ${name} (${isInhouse ? "In-House" : "At Your Venue"})`,
       html: ibcHtml,
+    });
+
+    // ── Save to Supabase ──
+    const supabase = createServerClient();
+    await supabase.from("catering_bookings").insert({
+      name,
+      email,
+      phone,
+      booking_type: bookingType,
+      date,
+      guests: String(guests),
+      message: notes ?? null,
+      details: isInhouse
+        ? { startTime, endTime, selectedDishes }
+        : { postcode, menuItems, estimatedTotal },
     });
 
     return Response.json({ success: true });

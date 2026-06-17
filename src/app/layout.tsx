@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Cinzel, Lora, Syne } from "next/font/google";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { Cinzel, Lora, Syne, Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const loraBody = Lora({
   subsets: ["latin"],
@@ -45,13 +45,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body suppressHydrationWarning className={cn(loraBody.variable, syne.variable, lora.variable, cinzel.variable, "font-body antialiased")}>
-        <div className="relative min-h-screen bg-background text-foreground">
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );
