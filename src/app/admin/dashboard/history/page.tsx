@@ -1,5 +1,7 @@
 import { createServerClient } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 type Booking = {
   id: string;
   created_at: string;

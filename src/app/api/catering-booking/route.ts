@@ -125,6 +125,7 @@ export async function POST(request: Request) {
       booking_type: bookingType,
       date,
       guests: String(guests),
+      status: "new",
       message: notes ?? null,
       details: isInhouse
         ? { startTime, endTime, selectedDishes }

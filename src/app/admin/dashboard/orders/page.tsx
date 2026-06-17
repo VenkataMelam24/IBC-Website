@@ -2,6 +2,8 @@ import { createServerClient } from "@/lib/supabase";
 import Link from "next/link";
 import { CompleteOrderButton } from "./complete-order-button";
 
+export const dynamic = "force-dynamic";
+
 type Booking = {
   id: string;
   created_at: string;
