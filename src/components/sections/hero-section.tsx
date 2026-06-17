@@ -22,8 +22,8 @@ const slides = [
     body: "Birthdays, corporate events, weddings, and family gatherings. We bring the full IBC experience to you.",
     cta1: { label: "Catering Enquiry", href: "/catering" },
     cta2: { label: "Learn More",       href: "/catering" },
-    bg: "image" as const,
-    image: "/images/catering-birthday.png",
+    bg: "video" as const,
+    video: "/catering-celebration.mp4",
   },
   {
     id: "order",
