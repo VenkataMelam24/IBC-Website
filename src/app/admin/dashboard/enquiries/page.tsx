@@ -32,7 +32,7 @@ export default async function EnquiriesPage() {
   return (
     <div>
       <div className="mb-6">
-        <h2 className="font-heading text-2xl font-bold text-foreground">Active Enquiries</h2>
+        <h2 className="font-heading text-xl font-bold text-foreground md:text-2xl">Active Enquiries</h2>
         <p className="mt-1 text-sm text-muted-foreground">New and quoted enquiries awaiting action.</p>
       </div>
 
@@ -41,14 +41,51 @@ export default async function EnquiriesPage() {
           Failed to load: {error.message}
         </div>
       ) : !bookings || bookings.length === 0 ? (
-        <div className="rounded-2xl border border-border bg-background p-12 text-center">
-          <p className="font-heading text-xl font-bold text-foreground">No active enquiries</p>
+        <div className="rounded-2xl border border-border bg-background p-10 text-center">
+          <p className="font-heading text-lg font-bold text-foreground">No active enquiries</p>
           <p className="mt-2 text-sm text-muted-foreground">New catering enquiries will appear here.</p>
         </div>
       ) : (
         <>
           <p className="mb-4 text-sm text-muted-foreground">{bookings.length} enquir{bookings.length === 1 ? "y" : "ies"}</p>
-          <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+
+          {/* Mobile cards */}
+          <div className="flex flex-col gap-3 md:hidden">
+            {(bookings as Booking[]).map((b) => (
+              <div key={b.id} className="rounded-2xl border border-border bg-background p-4 shadow-sm">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <p className="font-semibold text-foreground">{b.name}</p>
+                    <p className="text-sm text-muted-foreground">{b.phone}</p>
+                  </div>
+                  <span className={`shrink-0 inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize ${statusBadge[b.status] ?? "bg-gray-100 text-gray-500"}`}>
+                    {b.status === "quoted" ? "Quote Sent" : b.status}
+                  </span>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+                  <span>Event: <span className="font-semibold text-foreground">{b.date}</span></span>
+                  <span>Guests: <span className="font-semibold text-foreground">{b.guests}</span></span>
+                  <span className={`inline-flex rounded-full px-2 py-0.5 font-semibold ${b.booking_type === "inhouse" ? "bg-amber-50 text-amber-700" : "bg-blue-50 text-blue-700"}`}>
+                    {b.booking_type === "inhouse" ? "In-House" : "At Venue"}
+                  </span>
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  Received {new Date(b.created_at).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}
+                </div>
+                <div className="mt-3">
+                  <Link
+                    href={`/admin/dashboard/enquiries/${b.id}`}
+                    className="inline-flex items-center rounded-lg bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition hover:opacity-80"
+                  >
+                    Open →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop table */}
+          <div className="hidden overflow-hidden rounded-2xl border border-border bg-background shadow-sm md:block">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

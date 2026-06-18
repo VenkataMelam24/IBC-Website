@@ -2,8 +2,19 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 
 const NAV = [
+  {
+    href: "/admin/dashboard/new-quote",
+    label: "New Custom Quote",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+      </svg>
+    ),
+    highlight: true,
+  },
   {
     href: "/admin/dashboard/enquiries",
     label: "Active Enquiries",
@@ -42,88 +53,116 @@ const NAV = [
   },
 ];
 
+function SidebarContent({ pathname, onLogout, onClose }: { pathname: string; onLogout: () => void; onClose?: () => void }) {
+  return (
+    <>
+      <div className="border-b border-border px-5 py-5">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Indian Biryani Co.</p>
+        <p className="mt-0.5 font-heading text-base font-bold text-primary">Admin Panel</p>
+      </div>
+
+      <nav className="flex flex-1 flex-col gap-1 p-3">
+        {NAV.map((item) => {
+          const active = pathname.startsWith(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={onClose}
+              className={`flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
+                active
+                  ? "bg-primary text-primary-foreground"
+                  : item.highlight
+                  ? "bg-primary/10 text-primary hover:bg-primary/15"
+                  : "text-foreground hover:bg-[hsl(38_40%_93%)]"
+              }`}
+            >
+              {item.icon}
+              {item.label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <div className="border-t border-border p-3">
+        <button
+          onClick={onLogout}
+          className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-[hsl(38_40%_93%)] hover:text-foreground"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Log Out
+        </button>
+      </div>
+    </>
+  );
+}
+
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleLogout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
     router.push("/admin");
   };
 
+  const currentNav = NAV.find((n) => pathname.startsWith(n.href));
+
   return (
     <div className="flex min-h-screen bg-[hsl(38_48%_95%)]">
-      {/* Sidebar */}
-      <aside className="flex w-56 flex-col border-r border-border bg-background">
-        {/* Logo */}
-        <div className="border-b border-border px-5 py-5">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Indian Biryani Co.</p>
-          <p className="mt-0.5 font-heading text-base font-bold text-primary">Admin Panel</p>
-        </div>
 
-        {/* New Custom Quote CTA */}
-        <div className="px-3 pt-3 pb-1">
-          <Link
-            href="/admin/dashboard/new-quote"
-            className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-bold transition-colors ${
-              pathname.startsWith("/admin/dashboard/new-quote")
-                ? "bg-primary text-primary-foreground"
-                : "bg-primary/10 text-primary hover:bg-primary/15"
-            }`}
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-            </svg>
-            New Custom Quote
-          </Link>
-        </div>
-
-        <div className="mx-3 my-2 border-t border-border" />
-
-        {/* Nav */}
-        <nav className="flex flex-1 flex-col gap-1 p-3">
-          {NAV.map((item) => {
-            const active = pathname.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-semibold transition-colors ${
-                  active
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-[hsl(38_40%_93%)]"
-                }`}
-              >
-                {item.icon}
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Logout */}
-        <div className="border-t border-border p-3">
-          <button
-            onClick={handleLogout}
-            className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-[hsl(38_40%_93%)] hover:text-foreground"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-            Log Out
-          </button>
-        </div>
+      {/* ── Desktop sidebar ── */}
+      <aside className="hidden w-56 flex-col border-r border-border bg-background md:flex">
+        <SidebarContent pathname={pathname} onLogout={handleLogout} />
       </aside>
 
-      {/* Main */}
+      {/* ── Mobile drawer overlay ── */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setDrawerOpen(false)} />
+          <div className="absolute left-0 top-0 flex h-full w-64 flex-col bg-background shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border px-5 py-4">
+              <p className="font-heading text-base font-bold text-primary">Admin Panel</p>
+              <button onClick={() => setDrawerOpen(false)} className="rounded p-1 text-foreground/60 hover:text-foreground">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <SidebarContent pathname={pathname} onLogout={handleLogout} onClose={() => setDrawerOpen(false)} />
+          </div>
+        </div>
+      )}
+
+      {/* ── Main area ── */}
       <div className="flex flex-1 flex-col overflow-hidden">
+
         {/* Top bar */}
-        <header className="border-b border-border bg-primary px-8 py-4">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/60">Indian Biryani Company</p>
-          <h1 className="font-heading text-xl font-bold text-primary-foreground">Catering Dashboard</h1>
+        <header className="border-b border-border bg-primary px-4 py-3 md:px-8 md:py-4">
+          <div className="flex items-center gap-3">
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setDrawerOpen(true)}
+              className="flex h-8 w-8 items-center justify-center rounded text-primary-foreground/80 hover:text-primary-foreground md:hidden"
+              aria-label="Open menu"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-foreground/60">Indian Biryani Company</p>
+              <h1 className="font-heading text-lg font-bold text-primary-foreground md:text-xl">
+                {currentNav?.label ?? "Dashboard"}
+              </h1>
+            </div>
+          </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto px-8 py-8">
+        <main className="flex-1 overflow-y-auto px-4 py-5 md:px-8 md:py-8">
           {children}
         </main>
       </div>

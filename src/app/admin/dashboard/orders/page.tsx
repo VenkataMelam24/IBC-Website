@@ -51,18 +51,18 @@ export default async function OrdersPage() {
             const total = subtotal * (1 - discount / 100);
             return (
               <div key={o.id} className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
-                <div className="flex items-start justify-between gap-4 border-b border-border bg-[hsl(32_40%_97%)] px-6 py-4">
+                <div className="flex flex-col gap-1 border-b border-border bg-[hsl(32_40%_97%)] px-4 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4 sm:px-6">
                   <div>
-                    <p className="font-heading text-lg font-bold text-foreground">{o.name}</p>
+                    <p className="font-heading text-base font-bold text-foreground sm:text-lg">{o.name}</p>
                     <p className="text-sm text-muted-foreground">{o.phone} · {o.email}</p>
                   </div>
-                  <div className="text-right text-sm">
+                  <div className="text-sm sm:text-right">
                     <p className="font-semibold text-foreground">Event: {o.date}</p>
                     <p className="text-muted-foreground">{o.guests} guests · {o.booking_type === "inhouse" ? "In-House" : "At Venue"}</p>
                   </div>
                 </div>
 
-                <div className="px-6 py-4">
+                <div className="px-4 py-4 sm:px-6">
                   {o.quote_items && o.quote_items.length > 0 && (
                     <table className="mb-4 w-full text-sm">
                       <thead>
@@ -93,7 +93,7 @@ export default async function OrdersPage() {
                   )}
                 </div>
 
-                <div className="flex items-center justify-between border-t border-border px-6 py-4">
+                <div className="flex items-center justify-between border-t border-border px-4 py-4 sm:px-6">
                   <Link href={`/admin/dashboard/enquiries/${o.id}`} className="text-sm font-semibold text-primary underline-offset-2 hover:underline">
                     View details
                   </Link>
