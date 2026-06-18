@@ -84,7 +84,7 @@ export function MenuPageContent({ cateringCategories }: { cateringCategories: Ca
     <>
       {/* ── Tab switcher ── */}
       <div className="border-b border-border bg-background px-6 py-10 text-center lg:px-10">
-        <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">Discover our menu.</h1>
+        <h1 className="font-heading text-3xl font-bold text-foreground md:text-5xl">Discover our menu.</h1>
         <div className="mt-8 inline-flex rounded-full bg-muted p-1">
           <button
             type="button"
@@ -127,7 +127,7 @@ export function MenuPageContent({ cateringCategories }: { cateringCategories: Ca
                 : "grid gap-6 sm:grid-cols-2 lg:grid-cols-4";
             return (
               <div key={cat.category} className={idx > 0 ? "mt-16" : ""}>
-                <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+                <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
                   {cat.category}
                 </h2>
                 <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { BottomTabBar } from "@/components/layout/bottom-tab-bar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://theibc.de"),
@@ -57,8 +58,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="relative min-h-screen bg-background text-foreground">
       <Navbar />
-      <main>{children}</main>
+      <main className="pb-16 md:pb-0">{children}</main>
       <Footer />
+      <BottomTabBar />
     </div>
   );
 }

@@ -45,18 +45,19 @@ const socialLinks = [
 ];
 
 const footerLinks = [
-  { label: "Order Now", href: "/#order-online" },
+  { label: "Home", href: "/" },
+  { label: "Menu", href: "/menu" },
   { label: "Catering", href: "/catering" },
-  { label: "Branch", href: "/branch" },
+  { label: "Order", href: "/#order-online" },
 ];
 
 export function Footer() {
   return (
     <footer className="bg-primary">
-      <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 py-12 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-10">
+      <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-8 md:gap-10 md:py-12 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-10">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="h-14 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
+          <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="h-10 w-auto md:h-14" style={{ filter: "brightness(0) invert(1)" }} />
           <p className="mt-4 max-w-md text-xs leading-relaxed text-primary-foreground/55">
             ⚠ Images shown on this website are for reference purposes only and may not represent
             the exact appearance of the actual dishes served.

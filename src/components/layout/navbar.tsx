@@ -2,10 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, UtensilsCrossed, ChefHat, MapPin, Info } from "lucide-react";
 import { useState } from "react";
 import { navLinks } from "@/data/navigation";
 import { cn } from "@/lib/utils";
+
+const drawerLinks = [
+  { label: "Home",     href: "/",        icon: Home },
+  { label: "Menu",     href: "/menu",     icon: UtensilsCrossed },
+  { label: "Catering", href: "/catering", icon: ChefHat },
+  { label: "Branch",   href: "/branch",   icon: MapPin },
+  { label: "About Us", href: "/about",    icon: Info },
+];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,32 +25,67 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:h-20 lg:px-10">
-        <Link href="/" aria-label="Indian Biryani Company">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="h-14 w-auto md:h-16" />
-        </Link>
+    <>
+      <header className="sticky top-0 z-50 border-b border-border bg-background">
+        {/* ── Mobile top bar ── */}
+        <div className="flex h-14 items-center justify-between px-4 md:hidden">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="flex h-9 w-9 items-center justify-center rounded text-foreground"
+            aria-label="Open menu"
+          >
+            <Menu size={22} />
+          </button>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={cn(
-                "relative pb-0.5 text-sm font-semibold tracking-wide transition-colors",
-                isActive(item.href)
-                  ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
-                  : "text-foreground/70 hover:text-foreground",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+          <Link href="/" aria-label="Indian Biryani Company">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-new.png"
+              alt="IBC"
+              className="h-9 w-auto"
+              style={{ filter: "brightness(0) saturate(100%) invert(11%) sepia(95%) saturate(1200%) hue-rotate(310deg)" }}
+            />
+          </Link>
 
-        <div className="hidden items-center gap-5 md:flex">
-          {/* Action buttons */}
+          {(() => {
+            const btnClass = "rounded bg-primary px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-primary-foreground whitespace-nowrap";
+            if (pathname === "/menu")
+              return <Link href="/#order-online" className={btnClass}>Order Now</Link>;
+            if (pathname === "/catering" || pathname.startsWith("/catering/"))
+              return <Link href="/catering/book" className={btnClass}>Book Catering</Link>;
+            return (
+              <a href="https://www.quandoo.de/en/place/ibc-indian-biryani-company-86312" target="_blank" rel="noopener noreferrer" className={btnClass}>
+                Book a Table
+              </a>
+            );
+          })()}
+        </div>
+
+        {/* ── Desktop top bar ── */}
+        <div className="mx-auto hidden h-20 w-full max-w-7xl items-center justify-between px-6 md:flex lg:px-10">
+          <Link href="/" aria-label="Indian Biryani Company">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo-new.png" alt="IBC — Indian Biryani Company" className="h-16 w-auto" />
+          </Link>
+
+          <nav className="flex items-center gap-8">
+            {navLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={cn(
+                  "relative pb-0.5 text-sm font-semibold tracking-wide transition-colors",
+                  isActive(item.href)
+                    ? "text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary"
+                    : "text-foreground/70 hover:text-foreground",
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
           <div className="flex items-center gap-3">
             <a
               href="https://www.quandoo.de/en/place/ibc-indian-biryani-company-86312"
@@ -60,60 +103,67 @@ export function Navbar() {
             </Link>
           </div>
         </div>
+      </header>
 
-        <button
-          type="button"
-          onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded border border-border text-foreground md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
-      </div>
-
+      {/* ── Mobile drawer ── */}
       <div
         className={cn(
-          "grid border-t border-border bg-background px-6 transition-[grid-template-rows] duration-300 md:hidden",
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
+          "fixed inset-0 z-[60] transition-opacity duration-300 md:hidden",
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
         )}
       >
-        <div className="overflow-hidden">
-          <nav className="flex flex-col gap-1 py-4">
-            {navLinks.map((item) => (
+        {/* Backdrop */}
+        <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
+
+        {/* Panel */}
+        <div
+          className={cn(
+            "absolute left-0 top-0 flex h-full w-72 flex-col bg-background shadow-2xl transition-transform duration-300",
+            open ? "translate-x-0" : "-translate-x-full",
+          )}
+        >
+          {/* Drawer header */}
+          <div className="flex items-center justify-between border-b border-border px-5 py-4">
+            <Link href="/" onClick={() => setOpen(false)} aria-label="Indian Biryani Company">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-new.png"
+                alt="IBC — Indian Biryani Company"
+                className="h-10 w-auto"
+                style={{ filter: "brightness(0) saturate(100%) invert(11%) sepia(95%) saturate(1200%) hue-rotate(310deg)" }}
+              />
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="flex h-8 w-8 items-center justify-center rounded text-foreground/60 hover:text-foreground"
+              aria-label="Close menu"
+            >
+              <X size={18} />
+            </button>
+          </div>
+
+          {/* Drawer links */}
+          <nav className="flex flex-1 flex-col gap-1 p-4">
+            {drawerLinks.map(({ label, href, icon: Icon }) => (
               <Link
-                key={item.label}
-                href={item.href}
+                key={label}
+                href={href}
+                onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded px-3 py-2 text-sm font-semibold transition-colors",
-                  isActive(item.href)
-                    ? "bg-primary/8 text-primary"
+                  "flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold transition-colors",
+                  isActive(href)
+                    ? "bg-primary/10 text-primary"
                     : "text-foreground/70 hover:bg-primary/5 hover:text-foreground",
                 )}
-                onClick={() => setOpen(false)}
               >
-                {item.label}
+                <Icon size={18} />
+                {label}
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-2 pb-2">
-              <a
-                href="https://www.quandoo.de/en/place/ibc-indian-biryani-company-86312"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center rounded border-2 border-primary px-6 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                Book a Table
-              </a>
-              <Link
-                href="/#order-online"
-                className="inline-flex h-11 items-center justify-center rounded bg-primary px-6 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Order Now
-              </Link>
-            </div>
           </nav>
         </div>
       </div>
-    </header>
+    </>
   );
 }

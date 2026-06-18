@@ -48,7 +48,7 @@ export function MenuRow({ category, onSelectItem }: MenuRowProps) {
   return (
     <section id={category.id} className="scroll-mt-32">
       <div className="mb-8">
-        <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+        <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
           {category.title}
         </h2>
         <div className="mt-2.5 h-1 w-10 rounded-full bg-primary" />

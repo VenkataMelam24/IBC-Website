@@ -98,23 +98,23 @@ export function HeroSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-accent/90">
               {slide.eyebrow}
             </p>
-            <h1 className="mt-5 whitespace-pre-line font-heading text-4xl font-bold leading-[1.3] text-primary-foreground sm:text-5xl md:text-6xl">
+            <h1 className="mt-5 whitespace-pre-line font-heading text-3xl font-bold leading-[1.3] text-primary-foreground sm:text-5xl md:text-6xl">
               {slide.headline}
             </h1>
-            <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-primary-foreground/85 md:text-lg">
+            <p className="mt-4 max-w-[44ch] text-sm leading-relaxed text-primary-foreground/85 md:mt-5 md:text-base">
               {slide.body}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href={slide.cta1.href}
-                className="inline-flex h-12 items-center rounded bg-accent px-6 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
+                className="inline-flex h-12 items-center justify-center rounded bg-accent px-6 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90"
               >
                 {slide.cta1.label}
               </Link>
               <Link
                 href={slide.cta2.href}
                 {...(slide.cta2.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="inline-flex h-12 items-center rounded border border-primary-foreground/40 bg-transparent px-6 text-sm font-bold text-primary-foreground transition-colors hover:border-primary-foreground/60 hover:bg-primary-foreground/10"
+                className="inline-flex h-12 items-center justify-center rounded border border-primary-foreground/40 bg-transparent px-6 text-sm font-bold text-primary-foreground transition-colors hover:border-primary-foreground/60 hover:bg-primary-foreground/10"
               >
                 {slide.cta2.label}
               </Link>

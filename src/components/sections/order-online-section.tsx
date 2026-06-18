@@ -23,20 +23,20 @@ const platforms = [
 
 export function OrderOnlineSection() {
   return (
-    <section id="order-online" className="border-t border-border py-14 md:py-20">
+    <section id="order-online" className="border-t border-border py-10 md:py-20">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
 
           {/* Left — text */}
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-[0.26em] text-muted-foreground">
               Order Online
             </p>
-            <h2 className="mt-3 font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+            <h2 className="mt-3 font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
               Get IBC Delivered to You.
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:mt-6 md:text-base">
               Craving a biryani or a curry fix? Order your favourite IBC dishes straight
               to your door through Uber Eats, Lieferando, or Wolt. Our very own IBC webshop
               is also launching soon. Stay tuned.

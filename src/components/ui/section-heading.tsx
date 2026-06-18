@@ -16,7 +16,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={cn("max-w-3xl", center && "mx-auto text-center", className)}>
-      <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+      <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
         {title}
       </h2>
       <div className={cn("mt-3 h-1 w-20 bg-primary", center && "mx-auto")} />

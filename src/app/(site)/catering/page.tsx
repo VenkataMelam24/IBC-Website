@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 import { CalendarCheck, MapPin, PhoneCall, Utensils } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { ReviewsCarousel } from "@/components/sections/reviews-carousel";
 
 const features = [
   {
@@ -59,7 +60,7 @@ export default function CateringPage() {
             <p className="text-xs font-bold uppercase tracking-[0.3em] text-primary/60">
               IBC Catering
             </p>
-            <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.3] text-foreground sm:text-5xl lg:text-[3.25rem]">
+            <h1 className="mt-4 font-heading text-3xl font-bold leading-[1.3] text-foreground sm:text-5xl lg:text-[3.25rem]">
               Catering Service.
             </h1>
             <div className="mt-4 h-1 w-16 bg-primary" />
@@ -105,7 +106,7 @@ export default function CateringPage() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <Reveal>
             <div className="text-center">
-              <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+              <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
                 Catering Menu Topsellers.
               </h2>
               <div className="mx-auto mt-3 h-1 w-20 bg-primary" />
@@ -135,7 +136,7 @@ export default function CateringPage() {
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
 
           <Reveal>
-            <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+            <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
               Two Ways to Celebrate with IBC.
             </h2>
             <div className="mt-3 h-1 w-20 bg-primary" />
@@ -234,7 +235,7 @@ export default function CateringPage() {
           <Reveal>
             <div className="flex flex-wrap items-start justify-between gap-8">
               <div>
-                <h2 className="font-heading text-4xl font-bold leading-[1.35] text-primary-foreground md:text-5xl">
+                <h2 className="font-heading text-3xl font-bold leading-[1.35] text-primary-foreground md:text-5xl">
                   What Our Guests Say.
                 </h2>
                 <div className="mt-3 h-1 w-20 bg-accent" />
@@ -243,7 +244,7 @@ export default function CateringPage() {
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-xl bg-primary-foreground/10 px-5 py-4 ring-1 ring-primary-foreground/20">
-                <p className="font-heading text-4xl font-bold text-primary-foreground">4.7</p>
+                <p className="font-heading text-3xl font-bold text-primary-foreground">4.7</p>
                 <div className="mt-1 flex gap-0.5 text-base text-accent">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
@@ -253,29 +254,7 @@ export default function CateringPage() {
             </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { text: "It's the perfect place for the finest dum Biryani! Great food and friendly service.", name: "Sayantan A." },
-              { text: "Amazing chef, tremendous quality, outstanding quality, perfect spice — will come back soon.", name: "Christoph E." },
-              { text: "Great food and lovely service. The biryani and majestic chicken are a must try.", name: "Sachin N." },
-              { text: "Really tasty biryani. Highly recommend for real Indian food.", name: "Sandeep P." },
-              { text: "The taste is really good — one of the best biryani in Berlin.", name: "Nikhil K." },
-              { text: "Super leckeres, sehr authentisch wirkendes Essen. Kann ich nur empfehlen.", name: "Bernd R." },
-            ].map((review, i) => (
-              <Reveal key={review.name} delay={0.04 * (i % 3)}>
-                <div className="flex h-full flex-col rounded-2xl bg-primary-foreground/8 p-7 ring-1 ring-primary-foreground/15">
-                  <div className="flex gap-0.5 text-accent">
-                    {[...Array(5)].map((_, j) => <span key={j}>★</span>)}
-                  </div>
-                  <p className="mt-4 flex-1 text-base leading-relaxed text-primary-foreground/90">
-                    &ldquo;{review.text}&rdquo;
-                  </p>
-                  <p className="mt-5 text-sm font-semibold text-primary-foreground">{review.name}</p>
-                  <p className="text-xs text-primary-foreground/55">via Quandoo</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <ReviewsCarousel />
         </div>
       </section>
 

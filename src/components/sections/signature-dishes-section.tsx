@@ -57,7 +57,7 @@ export function SignatureDishesSection() {
     <section id="menu" className="bg-card py-14 md:py-20">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
         <Reveal>
-          <h2 className="font-heading text-4xl font-bold leading-[1.35] text-foreground md:text-5xl">
+          <h2 className="font-heading text-3xl font-bold leading-[1.35] text-foreground md:text-5xl">
             Signature Dishes
           </h2>
           <div className="mt-3 h-1 w-20 bg-primary" />

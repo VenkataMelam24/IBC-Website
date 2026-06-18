@@ -48,7 +48,7 @@ export default function BranchPage() {
         <div className="relative mx-auto flex min-h-[42vh] w-full max-w-7xl items-center justify-center px-6 py-16 text-center lg:px-10">
           <Reveal>
             <div className="max-w-3xl">
-              <h1 className="font-heading text-5xl font-semibold tracking-tight text-cream md:text-6xl">
+              <h1 className="font-heading text-3xl font-semibold tracking-tight text-cream md:text-6xl">
                 Our Destinations
               </h1>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-cream/85 md:text-lg">
@@ -63,7 +63,7 @@ export default function BranchPage() {
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-10 lg:grid-cols-[1fr_390px] lg:items-center lg:px-10">
           <Reveal>
             <div>
-              <h2 className="font-heading text-5xl font-semibold text-foreground">Find a Branch</h2>
+              <h2 className="font-heading text-3xl font-semibold text-foreground md:text-5xl">Find a Branch</h2>
               <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
                 Locate your nearest taste of IBC hospitality.
               </p>
