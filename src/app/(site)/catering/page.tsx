@@ -244,16 +244,15 @@ export default function CateringPage() {
                 </p>
               </div>
               <div className="flex flex-col items-center rounded-xl bg-primary-foreground/10 px-5 py-4 ring-1 ring-primary-foreground/20">
-                <p className="font-heading text-3xl font-bold text-primary-foreground">4.7</p>
+                <p className="font-heading text-3xl font-bold text-primary-foreground">4.9</p>
                 <div className="mt-1 flex gap-0.5 text-base text-accent">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
-                <p className="mt-1.5 text-xs font-semibold text-primary-foreground">120+ ratings</p>
-                <p className="text-xs text-primary-foreground/60">on Uber Eats</p>
+                <p className="mt-1.5 text-xs font-semibold text-primary-foreground">251 ratings</p>
+                <p className="text-xs text-primary-foreground/60">on Google</p>
               </div>
             </div>
           </Reveal>
-
           <ReviewsCarousel />
         </div>
       </section>
