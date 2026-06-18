@@ -106,7 +106,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   const handleLogout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
-    router.push("/admin");
+    router.push("/");
   };
 
   const currentNav = NAV.find((n) => pathname.startsWith(n.href));
