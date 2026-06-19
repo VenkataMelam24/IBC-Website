@@ -172,8 +172,8 @@ export default function BranchPage() {
               </span>
               <div className="mt-4 h-1 w-20 bg-accent" />
               <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-primary-foreground/75">
-                More IBC locations across Berlin are in the works. Watch this space.
-                Real biryani is coming to a neighbourhood near you.
+                We started in one kitchen. Now we are building more.
+                Every new location brings the same biryani, the same quality, just closer to you.
               </p>
             </div>
           </Reveal>

@@ -16,7 +16,7 @@ import { ReviewsCarousel } from "@/components/sections/reviews-carousel";
 const features = [
   {
     icon: Utensils,
-    text: "Biryanis, curries, and more — real Indian food for every event",
+    text: "Biryanis, curries, and more. Real Indian food for every event",
   },
   {
     icon: CalendarCheck,
@@ -28,7 +28,7 @@ const features = [
   },
   {
     icon: PhoneCall,
-    text: "Personal service — our team is happy to help plan your event",
+    text: "Personal service. Our team is happy to help plan your event",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function CateringPage() {
               </h2>
               <div className="mx-auto mt-3 h-1 w-20 bg-primary" />
               <p className="mx-auto mt-5 max-w-[52ch] text-base leading-relaxed text-muted-foreground">
-                Our most loved dishes — perfect for events, birthdays, and corporate gatherings.
+                Our most loved dishes, perfect for events, birthdays, and corporate gatherings.
               </p>
             </div>
           </Reveal>

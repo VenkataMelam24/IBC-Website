@@ -65,7 +65,13 @@ function PriceTable({
           <div className="border-b border-border bg-[hsl(38_48%_96%)] px-6 py-2">
             <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{category}</p>
           </div>
-          <table className="w-full text-sm">
+          <table className="w-full table-fixed text-sm">
+            <colgroup>
+              <col className="w-auto" />
+              <col className="w-32" />
+              <col className="w-32" />
+              <col className="w-28" />
+            </colgroup>
             <tbody className="divide-y divide-border">
               {catItems.map((item) => {
                 const draft = editing[item.id];
@@ -78,8 +84,8 @@ function PriceTable({
                     {draft ? (
                       <>
                         <td className="px-4 py-2">
-                          <div className="flex items-center gap-2">
-                            <span className="text-muted-foreground text-sm">€</span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-sm text-muted-foreground">€</span>
                             <input
                               type="number"
                               min={0}
@@ -91,7 +97,7 @@ function PriceTable({
                                   [item.id]: { ...prev[item.id]!, price: e.target.value },
                                 }))
                               }
-                              className="w-24 rounded-lg border border-primary bg-background px-3 py-1.5 text-sm focus:outline-none"
+                              className="w-20 rounded-lg border border-primary bg-background px-2 py-1.5 text-sm focus:outline-none"
                               autoFocus
                             />
                           </div>
@@ -106,11 +112,11 @@ function PriceTable({
                                 [item.id]: { ...prev[item.id]!, price_label: e.target.value },
                               }))
                             }
-                            placeholder="e.g. €119 or from €50"
-                            className="w-32 rounded-lg border border-border bg-background px-3 py-1.5 text-sm focus:border-primary focus:outline-none"
+                            placeholder="e.g. from €50"
+                            className="w-full rounded-lg border border-border bg-background px-2 py-1.5 text-sm focus:border-primary focus:outline-none"
                           />
                         </td>
-                        <td className="whitespace-nowrap px-4 py-2">
+                        <td className="px-4 py-2">
                           <div className="flex items-center gap-2">
                             <button
                               onClick={() => handleSave(item)}
@@ -132,7 +138,7 @@ function PriceTable({
                       <>
                         <td className="px-4 py-3 font-semibold text-primary">€{Number(item.price).toFixed(2)}</td>
                         <td className="px-4 py-3 text-muted-foreground">{item.price_label}</td>
-                        <td className="whitespace-nowrap px-4 py-2">
+                        <td className="px-4 py-2">
                           {wasSaved ? (
                             <span className="text-xs font-semibold text-green-600">Saved ✓</span>
                           ) : (
