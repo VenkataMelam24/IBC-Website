@@ -45,6 +45,7 @@ export default function NewInvoicePage() {
         dueDate: fmtDate(dueDate),
         deliveryDate: fmtDate(deliveryDate),
         lineItems: items.map((i) => ({ description: i.description, quantity: parseFloat(i.quantity), unitPrice: parseFloat(i.unitPrice), vatRate: parseFloat(i.vatRate) })),
+        sendEmail: action === "send",
       };
 
       const res = await fetch("/api/admin/invoices", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
@@ -55,7 +56,7 @@ export default function NewInvoicePage() {
       if (action === "download") {
         window.open(`/api/admin/invoices/${data.invoice.id}`, "_blank");
       }
-      setSuccess(`Invoice ${data.invoice.invoice_number} ${action === "send" ? "sent to " + client.email : "created"}!`);
+      setSuccess(`Invoice ${data.invoice.invoice_number} ${action === "send" ? "sent to " + client.email : "downloaded"}!`);
       setTimeout(() => router.push("/admin/dashboard/invoices"), 1500);
     } catch (e) {
       setError(String(e));

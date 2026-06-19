@@ -55,6 +55,7 @@ export async function POST(request: Request) {
       dueDate: string;
       deliveryDate: string;
       lineItems: InvoiceLineItem[];
+      sendEmail: boolean;
     };
 
     const supabase = createServerClient();
@@ -108,12 +109,14 @@ export async function POST(request: Request) {
       total_net: totalNet,
       total_vat: totalVat,
       total_gross: totalGross,
-      status: "sent",
+      status: body.sendEmail ? "sent" : "draft",
     }).select().single();
 
     if (dbErr) return Response.json({ error: dbErr.message }, { status: 500 });
 
-    // Send email
+    // Send email only when requested
+    if (!body.sendEmail) return Response.json({ success: true, invoice: saved });
+
     await transporter.sendMail({
       from: `"Indian Biryani Company" <${process.env.SMTP_USER}>`,
       to: body.client.email,
