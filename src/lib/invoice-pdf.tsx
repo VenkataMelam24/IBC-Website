@@ -1,4 +1,4 @@
-import { Document, Page, View, Text, StyleSheet, Image } from "@react-pdf/renderer";
+import { Document, Page, View, Text, StyleSheet, Image, Link } from "@react-pdf/renderer";
 
 const burgundy = "#6b1e2e";
 const gold = "#c9a84c";
@@ -90,6 +90,7 @@ export type InvoiceData = {
   bankName: string;
   iban: string;
   bic: string;
+  logoBase64: string;
 };
 
 function fmt(n: number) {
@@ -118,8 +119,6 @@ function InvoicePage({ data, lang }: { data: InvoiceData; lang: "de" | "en" }) {
     tc: de ? "Allgemeine Geschäftsbedingungen" : "Terms and Conditions",
   };
 
-  const logoPath = `${process.cwd()}/public/images/logo-new.png`;
-
   const vatGroups: Record<number, number> = {};
   for (const item of data.lineItems) {
     vatGroups[item.vatRate] = (vatGroups[item.vatRate] ?? 0) + (item.quantity * item.unitPrice * item.vatRate) / 100;
@@ -132,7 +131,7 @@ function InvoicePage({ data, lang }: { data: InvoiceData; lang: "de" | "en" }) {
         <Text style={S.ibcSmall}>
           IBC Indian Biryani Company | Hektorstraße 11 | 10711 Berlin | Deutschland
         </Text>
-        <Image src={logoPath} style={S.logoImg} />
+        <Image src={data.logoBase64} style={S.logoImg} />
       </View>
 
       {/* Client + Meta */}
@@ -240,8 +239,18 @@ function InvoicePage({ data, lang }: { data: InvoiceData; lang: "de" | "en" }) {
           <Text style={S.footerLine}>Germany</Text>
         </View>
         <View style={S.footerCol}>
-          <Text style={S.footerLine}>+49 179 9676142</Text>
-          <Text style={S.footerLine}>theindianbiryanicompany@gmail.com</Text>
+          <View style={{ flexDirection: "row", alignItems: "center", marginBottom: 2 }}>
+            <Link src="https://wa.me/4917737771839" style={{ textDecoration: "none" }}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 3 }}>
+                <View style={{ width: 10, height: 10, backgroundColor: "#25D366", borderRadius: 5, justifyContent: "center", alignItems: "center" }}>
+                  <Text style={{ fontSize: 5.5, color: "#fff", fontFamily: "Helvetica-Bold" }}>W</Text>
+                </View>
+                <Text style={[S.footerLine, { color: "#25D366" }]}>+49 177 3771839</Text>
+              </View>
+            </Link>
+          </View>
+          <Text style={S.footerLine}>030 20833623</Text>
+          <Text style={S.footerLine}>info@theibc.de</Text>
         </View>
         <View style={S.footerCol}>
           <Text style={S.footerLine}>USt-IdNr.: DE309715048</Text>

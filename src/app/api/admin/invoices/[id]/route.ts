@@ -2,6 +2,14 @@ import { renderToBuffer } from "@react-pdf/renderer";
 import { createServerClient } from "@/lib/supabase";
 import { InvoiceDocument, type InvoiceData } from "@/lib/invoice-pdf";
 import React from "react";
+import fs from "fs";
+import path from "path";
+
+function getLogoBase64(): string {
+  const logoPath = path.join(process.cwd(), "public", "images", "logo-new.png");
+  const buffer = fs.readFileSync(logoPath);
+  return `data:image/png;base64,${buffer.toString("base64")}`;
+}
 
 export const runtime = "nodejs";
 
@@ -34,6 +42,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     bankName: settings?.bank_name ?? "berliner-volksbank",
     iban: settings?.iban ?? "DE23 1009 0000 2648 2910 03",
     bic: settings?.bic ?? "BEVODEBB",
+    logoBase64: getLogoBase64(),
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
