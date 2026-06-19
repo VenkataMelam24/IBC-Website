@@ -9,15 +9,16 @@ export async function GET() {
     .single();
 
   if (error) {
-    return Response.json(
-      { bank_name: "berliner-volksbank", iban: "DE23 1009 0000 2648 2910 03", bic: "BEVODEBB" }
-    );
+    return Response.json({
+      bank_name: "berliner-volksbank", iban: "DE23 1009 0000 2648 2910 03", bic: "BEVODEBB",
+      whatsapp_phone: "+49 177 3771839", phone: "030 20833623", contact_email: "info@theibc.de",
+    });
   }
   return Response.json(data);
 }
 
 export async function PUT(request: Request) {
-  const body = await request.json() as { bank_name: string; iban: string; bic: string };
+  const body = await request.json() as { bank_name: string; iban: string; bic: string; whatsapp_phone: string; phone: string; contact_email: string };
   const supabase = createServerClient();
 
   const { error } = await supabase

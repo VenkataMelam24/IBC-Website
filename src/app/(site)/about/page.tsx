@@ -88,13 +88,13 @@ export default function AboutPage() {
 
             {/* Right: IBC bowl image */}
             <Reveal delay={0.08}>
-              <div className="hidden overflow-hidden rounded-2xl lg:block lg:ml-8 bg-white">
+              <div className="relative hidden aspect-square overflow-hidden lg:block">
                 <Image
                   src="/images/about-who-we-are.png"
                   alt="IBC biryani bowl held up"
-                  width={1080}
-                  height={1080}
-                  className="h-full w-full object-contain"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
             </Reveal>

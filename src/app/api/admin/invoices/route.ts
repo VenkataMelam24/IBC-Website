@@ -65,6 +65,9 @@ export async function POST(request: Request) {
     const bankName = settings?.bank_name ?? "berliner-volksbank";
     const iban = settings?.iban ?? "DE23 1009 0000 2648 2910 03";
     const bic = settings?.bic ?? "BEVODEBB";
+    const whatsappPhone = settings?.whatsapp_phone ?? "+49 177 3771839";
+    const phone = settings?.phone ?? "030 20833623";
+    const contactEmail = settings?.contact_email ?? "info@theibc.de";
 
     // Calculate totals
     const totalNet = body.lineItems.reduce((s, i) => s + i.quantity * i.unitPrice, 0);
@@ -86,6 +89,9 @@ export async function POST(request: Request) {
       bankName,
       iban,
       bic,
+      whatsappPhone,
+      phone,
+      contactEmail,
       logoBase64: getLogoBase64(),
     };
 
