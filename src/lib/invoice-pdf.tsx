@@ -233,7 +233,7 @@ function InvoicePage({ data, lang }: { data: InvoiceData; lang: "de" | "en" }) {
       {/* Footer */}
       <View style={S.footer} fixed>
         <View style={S.footerCol}>
-          <Text style={S.footerLabel}>indianbiryanicompany</Text>
+          <Text style={S.footerLabel}>IBC Indian Biryani Company</Text>
           <Text style={S.footerLine}>Hektorstraße 11</Text>
           <Text style={S.footerLine}>10711 Berlin</Text>
           <Text style={S.footerLine}>Germany</Text>
