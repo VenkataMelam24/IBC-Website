@@ -86,11 +86,12 @@ export default function AboutPage() {
               </div>
             </div>
 
+
             {/* Right: IBC bowl image */}
             <Reveal delay={0.08}>
               <div className="hidden lg:flex lg:items-center lg:justify-center">
                 <Image
-                  src="/images/about-who-we-are.png"
+                  src="/images/about-who-we-are-new.png"
                   alt="IBC biryani bowl held up"
                   width={1024}
                   height={1024}
